@@ -7,37 +7,37 @@
     "status": "Next Round",
     "fit": 4,
     "link": "https://erafellowship.org",
-    "notes": "Applied summer 2026 (rejected, 6000 applicants for 30 spots). Missed Sep 2026 deadline — IITM end-term exam same day, emailed requesting extension. Next window likely early 2027. Strong fit for agentic evaluation angle. ERA targets catastrophic risk pathways, not general AI ethics — frame accordingly."
+    "notes": "Applied summer 2026 (rejected, 6000 applicants for 30 spots). Missed Sep 2026 deadline — IITM end-term exam same day. Next window likely early 2027. Strong fit for agentic evaluation angle. ERA targets catastrophic risk pathways — frame application accordingly, not as general AI ethics."
   },
   {
     "id": "f2",
-    "name": "MATS (ML Alignment Theory Scholars)",
-    "org": "Redwood Research",
-    "deadline": "2026-12-01",
+    "name": "MATS Winter 2027",
+    "org": "ML Alignment Theory Scholars",
+    "deadline": "2026-10-31",
     "status": "Track",
     "fit": 4,
     "link": "https://matsprogram.org",
-    "notes": "Winter round. Strongest fit for technical safety track. Need at least one public output — Alignment Forum writeup or model-probe published results — before applying. Start with Apart Research hackathon first."
+    "notes": "OPEN NOW. Window: Aug 25 – Oct 31 2026 (AoE). Program runs Jan 19 – Apr 10 2027. 12 weeks, $19,200 stipend + $24k compute + housing + meals + travel. Berkeley and London, remote possible in some cases. International applicants eligible. No LLMs allowed in application responses — flag this. Decisions early-mid Nov 2026. Needs one public output first — Apart Research hackathon is the stepping stone."
   },
   {
     "id": "f3",
-    "name": "Apart Research Hackathon",
+    "name": "Apart Research Sprints",
     "org": "Apart Research",
     "deadline": "2026-10-01",
     "status": "Track",
     "fit": 4,
     "link": "https://apartresearch.com",
-    "notes": "Immediate entry point. Hackathon format — low friction, high signal. Good first output before MATS/ERA. Do this first."
+    "notes": "Immediate entry point. 3-day hackathon format. Pipeline: Sprint → Studio (5-20% of submissions, 4-6 weeks) → Fellowship (40% of Studio, 4-6 months). Current sprint: AI Incident Response (ran Sep 11-13 2026 — check next one). Do this before MATS application. Remote-friendly, global."
   },
   {
     "id": "f4",
-    "name": "SPAR (Student Program for AI Research)",
-    "org": "UC Berkeley HAAS",
-    "deadline": "2026-11-01",
+    "name": "SPAR Spring 2027",
+    "org": "UC Berkeley / SPARAI",
+    "deadline": "2027-01-14",
     "status": "Track",
     "fit": 3,
     "link": "https://sparai.org",
-    "notes": "Fall 2026 application. Remote mentorship model. Check eligibility given non-US enrollment."
+    "notes": "Fall 2026 closed. Spring 2027 applications open ~December 2026. Part-time remote, 5-40hrs/week, ~3 months. 130+ projects across technical safety, governance, policy, security. ~20% acceptance if you apply to 3-5 projects. Good parallel track alongside a job."
   },
   {
     "id": "f5",
@@ -47,7 +47,7 @@
     "status": "Track",
     "fit": 3,
     "link": "https://constellation.org/programs/astra-fellowship",
-    "notes": "Technical AI safety. More research-focused than Generator. Better fit than Generator for Michael."
+    "notes": "Technical AI safety. More research-focused than Generator. Better fit than Generator for Michael. Check current cycle dates."
   },
   {
     "id": "f6",
@@ -57,20 +57,40 @@
     "status": "Closed",
     "fit": 3,
     "link": "https://generatorresidency.org",
-    "notes": "Summer 2026 closed Apr 27. Next round not announced — expressed interest for next cohort (fillout form submitted). Non-research program — for ops/generalist builders. In-person Berkeley. J-1 visa needed. $6k/mo stipend + housing + travel. Good placement track record into AI safety orgs."
+    "notes": "Summer 2026 closed Apr 27. Next round not announced — expressed interest for next cohort. Non-research program — for ops/generalist builders. In-person Berkeley only. J-1 visa needed. $6k/mo stipend + housing + travel. Pipeline into AI safety orgs. Watch for 2027 cohort announcement."
   },
   {
     "id": "f7",
+    "name": "Anthropic Fellows Program",
+    "org": "Anthropic",
+    "deadline": "2026-10-15",
+    "status": "Track",
+    "fit": 4,
+    "link": "https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/",
+    "notes": "OPEN — rolling applications, next cohort Nov 2026. 4 months full-time. $3,850 USD/week stipend + ~$15k/month compute. In-person Berkeley or London. Work auth required in US/UK/Canada — NO visa sponsorship. This is a hard blocker unless Michael relocates or gets another visa route. 80% of fellows produce papers, 40% join Anthropic. No PhD required. Strong technical background expected. Check if remote cohort possible."
+  },
+  {
+    "id": "f8",
+    "name": "OpenAI Safety Fellowship",
+    "org": "OpenAI",
+    "deadline": "2026-05-03",
+    "status": "Closed",
+    "fit": 3,
+    "link": "https://openai.com/index/introducing-openai-safety-fellowship/",
+    "notes": "2026-27 cohort: deadline May 3 2026 (closed), program ran Sep 14 2026 – Feb 5 2027. New in 2026, pilot program. Watch for 2027-28 announcement. Priority areas: safety evaluation, agentic oversight, robustness, scalable mitigations. Empirically grounded technical work preferred."
+  },
+  {
+    "id": "f9",
     "name": "Chevening Scholarship",
     "org": "UK Foreign Commonwealth Office",
     "deadline": "2026-11-04",
     "status": "Track",
     "fit": 4,
     "link": "https://chevening.org",
-    "notes": "Strongly favors work experience, no age cap. Covers UK university + return flights. Strong fit given 20yr engineering background. Ireland/UK longer-term route."
+    "notes": "Covers UK university + return flights. Strongly favors work experience, no age cap — very strong fit given 20yr background. Deadline typically early November. Ireland/UK longer-term residency route possible post-fellowship. One of the highest-fit opportunities given Michael's profile."
   },
   {
-    "id": "f8",
+    "id": "f10",
     "name": "GovAI Fellowship",
     "org": "Centre for the Governance of AI",
     "deadline": "",
@@ -80,7 +100,7 @@
     "notes": "Policy/governance track. Less direct than MATS but relevant pipeline. Check current cycle."
   },
   {
-    "id": "f9",
+    "id": "f11",
     "name": "LASR Labs",
     "org": "LASR",
     "deadline": "",
@@ -88,5 +108,45 @@
     "fit": 3,
     "link": "https://lasrlabs.org",
     "notes": "London-based, technical safety research. Check current cohort timeline."
+  },
+  {
+    "id": "f12",
+    "name": "ML4Good Bootcamp",
+    "org": "ML4Good",
+    "deadline": "2027-02-01",
+    "status": "Track",
+    "fit": 3,
+    "link": "https://ml4good.org",
+    "notes": "8-day fully paid in-person bootcamp. Summer 2026 deadline was July 1 (closed). Next round likely Jan-Feb 2027 for spring cohort. Technical track (ML safety) or Governance track. Asia/East Asia cohorts being added — check. Good entry point before MATS/ERA. 98% recommendation rate. Alumni at UK AISI, MATS, CeSIA."
+  },
+  {
+    "id": "f13",
+    "name": "CBAI Summer Research Fellowship",
+    "org": "Cambridge Boston Alignment Initiative",
+    "deadline": "2027-04-01",
+    "status": "Track",
+    "fit": 4,
+    "link": "https://opportunitydesk.org/2026/04/02/cbai-summer-research-fellowship-in-ai-safety-2026-fully-funded/",
+    "notes": "Fully-funded 9-week research fellowship. $10k compute support per fellow. Extension up to 6 months. Open to undergrads, masters, PhDs, postdocs, and recent graduates transitioning into safety research. Technical safety, AI governance, and technical governance tracks. 2026 deadline was Apr 12 — watch for 2027 cycle. Alumni joined Goodfire and Redwood, published at NeurIPS/ICLR."
+  },
+  {
+    "id": "f14",
+    "name": "FAS AI Safety Policy Entrepreneurship Fellowship",
+    "org": "Federation of American Scientists",
+    "deadline": "2026-09-07",
+    "status": "Closed",
+    "fit": 2,
+    "link": "https://fas.org/career/ai-safety-pef/",
+    "notes": "2026 deadline was Sep 7 (closed). Part-time hybrid, 5hrs/week, Sep 30 2026 – Feb 28 2027. $5k stipend + $1k merit award. In-person retreats in California and Washington DC. Policy/governance focus — less direct fit for Michael's technical background. Watch for 2027 cycle."
+  },
+  {
+    "id": "f15",
+    "name": "Claude Corps Fellowship",
+    "org": "Anthropic",
+    "deadline": "2026-09-01",
+    "status": "Track",
+    "fit": 2,
+    "link": "https://www.anthropic.com/claude-corps/fellow",
+    "notes": "Cohort 3 starting Aug 2027 — applications open Sep 2026. Focus: societal challenges + AI tools. Selection based on hands-on AI comfort, learning speed, communication, self-direction. No specific background required. Less technical than Anthropic Fellows. Work auth in eligible countries likely required — check."
   }
 ]

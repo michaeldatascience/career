@@ -1,13 +1,13 @@
 [
   {
     "id": "g1",
-    "name": "MBZUAI — MS in ML / AI Safety",
+    "name": "MBZUAI — MS Machine Learning / AI Safety",
     "org": "Mohamed bin Zayed University of AI",
     "deadline": "2027-01-15",
     "status": "Track",
     "fit": 5,
     "link": "https://mbzuai.ac.ae",
-    "notes": "Primary funded MS target. Abu Dhabi. Fully funded. Faculty targets: Umang Bhatt (explainability), Nils Lukas (ML security). Draft inquiry email prepared — not yet sent. CGPA meets floor (~3.0/4.0 equiv) but not comfortably. Action: send faculty cold emails, then apply."
+    "notes": "Primary funded MS target. Abu Dhabi. Fully funded (tuition + stipend). Faculty targets: Umang Bhatt (explainability), Nils Lukas (ML security). Draft inquiry email prepared — not yet sent. CGPA meets floor (~3.0/4.0 equiv) but not comfortably. Action: send faculty cold emails now, then apply when portal opens."
   },
   {
     "id": "g2",
@@ -17,17 +17,17 @@
     "status": "Track",
     "fit": 4,
     "link": "https://onlinedegree.iitm.ac.in",
-    "notes": "No GATE required. Immediately accessible as IITM BS student. Most accessible path to a formal MTech. Check application cycle — may be able to apply before BS completion."
+    "notes": "No GATE required. Immediately accessible as existing IITM BS student. Most accessible MTech path. Low cost. Check current application cycle and whether BS completion is required first."
   },
   {
     "id": "g3",
-    "name": "KAUST — MS Computer Science (AI/ML focus)",
+    "name": "KAUST — MS Computer Science (AI/ML)",
     "org": "KAUST",
     "deadline": "2027-01-03",
     "status": "Track",
     "fit": 3,
     "link": "https://admissions.kaust.edu.sa",
-    "notes": "Portal opens Sep 28 2026. Deadline Jan 3 2027. Decisions Feb 14 2027. Fully funded ($20k/yr stipend + housing). GPA risk: 7.5 CGPA = ~3.0/4.0, right at floor, most admits above 3.3. Age question emailed to admissions Aug 27 2026, no reply yet. No age cap found on current site. Get written confirmation before spending effort on SOP. English test mandatory. GRE recommended given GPA."
+    "notes": "Portal opens Sep 28 2026. Fully funded: $20k/yr stipend + housing + health + travel. GPA risk: 7.5 CGPA = ~3.0/4.0, most admits above 3.3. Age question emailed Aug 27 2026 — no reply yet. No age cap found on current site. English test mandatory. GRE recommended given GPA. Get written age confirmation before investing effort in SOP."
   },
   {
     "id": "g4",
@@ -37,7 +37,7 @@
     "status": "Track",
     "fit": 3,
     "link": "https://www.iitb.ac.in",
-    "notes": "Fallback if international programs don't materialize. GATE exam required — needs active prep decision. Strong credential domestically."
+    "notes": "Fallback if international programs don't materialize. GATE exam required — active prep decision needed. Strong domestic credential."
   },
   {
     "id": "g5",
@@ -47,16 +47,96 @@
     "status": "Track",
     "fit": 3,
     "link": "https://fulbrightindia.org",
-    "notes": "India-specific cycle. Covers US grad study. Check eligibility and confirm current deadline."
+    "notes": "India-specific cycle. Covers US grad study. Check eligibility and current deadline — may have passed for 2026 cycle."
   },
   {
     "id": "g6",
     "name": "Ireland — PhD / Research Scholarship",
-    "org": "Irish universities",
+    "org": "Irish Universities",
     "deadline": "2026-10-01",
     "status": "Track",
     "fit": 3,
     "link": "",
-    "notes": "Critical Skills Employment Permit route identified for longer-term residency. Research scholarship deadline ~October. Longer-term plan — not immediate priority."
+    "notes": "Critical Skills Employment Permit route for longer-term residency. Research scholarship deadline ~October. Longer-term plan — not immediate priority."
+  },
+  {
+    "id": "g7",
+    "name": "EMAI — Erasmus Mundus Joint Master in AI",
+    "org": "UPF, Sapienza, Radboud, Ljubljana",
+    "deadline": "2026-12-20",
+    "status": "Track",
+    "fit": 4,
+    "link": "https://www.upf.edu/web/emai",
+    "notes": "Fully funded Erasmus Mundus scholarship: tuition waived + €1,400/month stipend + travel. 2-year joint degree across 4 European universities (Spain, Italy, Netherlands, Slovenia). Scholarship application period 1: Nov 15 – Dec 20 2026. Period 2 (tuition waiver only): until Mar 18 2027. Requires: transcripts, CV, motivation letter, English proof (IELTS/TOEFL), 2 reference letters, short intro video. Check 2027 intake dates — current listing may be for 2026 entry. Very strong fit given fully funded + Europe mobility + no single-country tuition."
+  },
+  {
+    "id": "g8",
+    "name": "Erasmus Mundus 2027 — new AI cohorts",
+    "org": "European Commission / Erasmus+",
+    "deadline": "2026-12-01",
+    "status": "Track",
+    "fit": 4,
+    "link": "https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters",
+    "notes": "37 new Erasmus Mundus programmes announced July 2026, including several with AI/data/compute focus. Applications expected to open autumn 2026, programs start Sep 2027. Fully funded: tuition waived + €1,400/month + travel. Check catalogue for new AI-specific programs. Apply to 2-3 programs simultaneously — applications are per-program, not centralised."
+  },
+  {
+    "id": "g9",
+    "name": "TU Darmstadt — MSc AI & ML",
+    "org": "Technical University of Darmstadt",
+    "deadline": "2027-05-15",
+    "status": "Track",
+    "fit": 3,
+    "link": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4258/",
+    "notes": "Germany public university — zero tuition (Hesse state, no non-EU surcharge). Only semester contribution ~€300. English-taught. 4 semesters. Part of Hessian AI Center. DAAD-listed. Winter intake. Requirements: relevant BSc, math/CS foundation. APS certification required for Indian students (allow 8-12 weeks). Solid research connections to industry. Budget: ~€12-15k/year living."
+  },
+  {
+    "id": "g10",
+    "name": "RWTH Aachen — MSc Data Science (AI track)",
+    "org": "RWTH Aachen University",
+    "deadline": "2027-03-01",
+    "status": "Track",
+    "fit": 3,
+    "link": "https://www.rwth-aachen.de",
+    "notes": "Zero tuition — North Rhine-Westphalia state, no non-EU surcharge. Semester fee ~€300. English-taught. Strong industry ties (Mercedes, Ford labs nearby). Winter and summer intakes. Requires: relevant BSc, math/CS credits. APS certification required. Budget: ~€12-15k/year. Good option if MBZUAI/Erasmus Mundus don't work out."
+  },
+  {
+    "id": "g11",
+    "name": "Saarland University — MSc Data Science & AI",
+    "org": "Universität des Saarlandes",
+    "deadline": "2027-05-15",
+    "status": "Track",
+    "fit": 3,
+    "link": "https://www.uni-saarland.de",
+    "notes": "Zero tuition. Semester fee ~€300. English-taught. Home of DFKI (German Research Center for AI) — direct research access. C1 English required (IELTS equivalent) — medium-of-instruction certificate NOT accepted. Winter and summer intakes. APS certification required for Indian students. Budget: ~€10-12k/year (Saarbrücken is cheaper than Munich/Berlin)."
+  },
+  {
+    "id": "g12",
+    "name": "Saarland / IMPRS-CS — PhD in CS/AI",
+    "org": "Max Planck Institute for Informatics",
+    "deadline": "2026-11-01",
+    "status": "Track",
+    "fit": 3,
+    "link": "https://www.mpi-inf.mpg.de/departments/imprs",
+    "notes": "International Max Planck Research School for Computer Science. Fully funded PhD: salary ~€2,000-2,500/month (TVöD). No tuition. Saarbrücken campus. Competitive but skips the MS step entirely. Worth tracking if research output materialises. Nov deadline typical. Requires strong research background or publications."
+  },
+  {
+    "id": "g13",
+    "name": "TU Berlin — MSc Computer Science (AI focus)",
+    "org": "Technical University of Berlin",
+    "deadline": "2027-05-15",
+    "status": "Track",
+    "fit": 3,
+    "link": "https://www.tu.berlin",
+    "notes": "Zero tuition — Berlin state, no non-EU surcharge. Semester fee ~€350. English-taught programs available. Berlin startup ecosystem (Aleph Alpha, deeptech hubs). Winter intake. APS certification required. Budget: ~€14-16k/year (Berlin cost of living rising). AI specialisation within general CS MSc."
+  },
+  {
+    "id": "g14",
+    "name": "Chevening + UK University MSc AI",
+    "org": "UK FCO + UK universities",
+    "deadline": "2026-11-04",
+    "status": "Track",
+    "fit": 4,
+    "link": "https://chevening.org",
+    "notes": "Chevening covers tuition + stipend for 1-year UK MSc. Strong fit given work experience (explicitly valued, no age cap). Can target UCL, Edinburgh, Imperial, Southampton AI programs. Apply Chevening first, then identify specific program. This doubles as a grad program AND a fellowship — highest leverage application in the pipeline."
   }
 ]
