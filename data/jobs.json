@@ -1,0 +1,52 @@
+[
+  {
+    "id": "j1",
+    "name": "Applied AI Engineer",
+    "org": "SiftHub",
+    "deadline": "",
+    "status": "Applied",
+    "fit": 5,
+    "link": "",
+    "notes": "Referred by Junaid via ClanX. RAG-based sales intelligence. ~37 people, Mumbai R&D. Application questions drafted. Strong fit — RAG + production AI exactly the background."
+  },
+  {
+    "id": "j2",
+    "name": "AI Deployment Engineer",
+    "org": "OpenAI India",
+    "deadline": "",
+    "status": "Track",
+    "fit": 4,
+    "link": "",
+    "notes": "Navi Mumbai location — good. Strong fit. AI use in OpenAI interviews strictly prohibited — flag prominently before interview."
+  },
+  {
+    "id": "j3",
+    "name": "Solutions Architect",
+    "org": "OpenAI India",
+    "deadline": "",
+    "status": "Track",
+    "fit": 4,
+    "link": "",
+    "notes": "Bangalore location — constraint. Strong fit otherwise. Worth applying if open to Bangalore."
+  },
+  {
+    "id": "j4",
+    "name": "Senior Backend Engineer (Platform & API)",
+    "org": "Buffer",
+    "deadline": "",
+    "status": "Track",
+    "fit": 3,
+    "link": "",
+    "notes": "TypeScript/Node.js/GraphQL gap identified vs JD. 3-week prep plan done. Decision pending on whether to proceed. Remote-first — good."
+  },
+  {
+    "id": "j5",
+    "name": "Software Engineer",
+    "org": "xAI",
+    "deadline": "",
+    "status": "Track",
+    "fit": 3,
+    "link": "",
+    "notes": "DM to Umesh Khanna pending — send this before applying. Action item."
+  }
+]

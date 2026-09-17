@@ -1,0 +1,92 @@
+[
+  {
+    "id": "f1",
+    "name": "ERA Fellowship",
+    "org": "Effective Radical Altruism",
+    "deadline": "2027-03-15",
+    "status": "Next Round",
+    "fit": 4,
+    "link": "https://erafellowship.org",
+    "notes": "Applied summer 2026 (rejected, 6000 applicants for 30 spots). Missed Sep 2026 deadline — IITM end-term exam same day, emailed requesting extension. Next window likely early 2027. Strong fit for agentic evaluation angle. ERA targets catastrophic risk pathways, not general AI ethics — frame accordingly."
+  },
+  {
+    "id": "f2",
+    "name": "MATS (ML Alignment Theory Scholars)",
+    "org": "Redwood Research",
+    "deadline": "2026-12-01",
+    "status": "Track",
+    "fit": 4,
+    "link": "https://matsprogram.org",
+    "notes": "Winter round. Strongest fit for technical safety track. Need at least one public output — Alignment Forum writeup or model-probe published results — before applying. Start with Apart Research hackathon first."
+  },
+  {
+    "id": "f3",
+    "name": "Apart Research Hackathon",
+    "org": "Apart Research",
+    "deadline": "2026-10-01",
+    "status": "Track",
+    "fit": 4,
+    "link": "https://apartresearch.com",
+    "notes": "Immediate entry point. Hackathon format — low friction, high signal. Good first output before MATS/ERA. Do this first."
+  },
+  {
+    "id": "f4",
+    "name": "SPAR (Student Program for AI Research)",
+    "org": "UC Berkeley HAAS",
+    "deadline": "2026-11-01",
+    "status": "Track",
+    "fit": 3,
+    "link": "https://sparai.org",
+    "notes": "Fall 2026 application. Remote mentorship model. Check eligibility given non-US enrollment."
+  },
+  {
+    "id": "f5",
+    "name": "Astra Fellowship",
+    "org": "Constellation",
+    "deadline": "2027-02-01",
+    "status": "Track",
+    "fit": 3,
+    "link": "https://constellation.org/programs/astra-fellowship",
+    "notes": "Technical AI safety. More research-focused than Generator. Better fit than Generator for Michael."
+  },
+  {
+    "id": "f6",
+    "name": "Generator Residency",
+    "org": "Kairos / Constellation",
+    "deadline": "2026-04-27",
+    "status": "Closed",
+    "fit": 3,
+    "link": "https://generatorresidency.org",
+    "notes": "Summer 2026 closed Apr 27. Next round not announced — expressed interest for next cohort (fillout form submitted). Non-research program — for ops/generalist builders. In-person Berkeley. J-1 visa needed. $6k/mo stipend + housing + travel. Good placement track record into AI safety orgs."
+  },
+  {
+    "id": "f7",
+    "name": "Chevening Scholarship",
+    "org": "UK Foreign Commonwealth Office",
+    "deadline": "2026-11-04",
+    "status": "Track",
+    "fit": 4,
+    "link": "https://chevening.org",
+    "notes": "Strongly favors work experience, no age cap. Covers UK university + return flights. Strong fit given 20yr engineering background. Ireland/UK longer-term route."
+  },
+  {
+    "id": "f8",
+    "name": "GovAI Fellowship",
+    "org": "Centre for the Governance of AI",
+    "deadline": "",
+    "status": "Track",
+    "fit": 3,
+    "link": "https://governance.ai",
+    "notes": "Policy/governance track. Less direct than MATS but relevant pipeline. Check current cycle."
+  },
+  {
+    "id": "f9",
+    "name": "LASR Labs",
+    "org": "LASR",
+    "deadline": "",
+    "status": "Track",
+    "fit": 3,
+    "link": "https://lasrlabs.org",
+    "notes": "London-based, technical safety research. Check current cohort timeline."
+  }
+]

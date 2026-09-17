@@ -1,0 +1,62 @@
+[
+  {
+    "id": "g1",
+    "name": "MBZUAI — MS in ML / AI Safety",
+    "org": "Mohamed bin Zayed University of AI",
+    "deadline": "2027-01-15",
+    "status": "Track",
+    "fit": 5,
+    "link": "https://mbzuai.ac.ae",
+    "notes": "Primary funded MS target. Abu Dhabi. Fully funded. Faculty targets: Umang Bhatt (explainability), Nils Lukas (ML security). Draft inquiry email prepared — not yet sent. CGPA meets floor (~3.0/4.0 equiv) but not comfortably. Action: send faculty cold emails, then apply."
+  },
+  {
+    "id": "g2",
+    "name": "IIT Madras — Web-Enabled MTech in AI",
+    "org": "IIT Madras",
+    "deadline": "",
+    "status": "Track",
+    "fit": 4,
+    "link": "https://onlinedegree.iitm.ac.in",
+    "notes": "No GATE required. Immediately accessible as IITM BS student. Most accessible path to a formal MTech. Check application cycle — may be able to apply before BS completion."
+  },
+  {
+    "id": "g3",
+    "name": "KAUST — MS Computer Science (AI/ML focus)",
+    "org": "KAUST",
+    "deadline": "2027-01-03",
+    "status": "Track",
+    "fit": 3,
+    "link": "https://admissions.kaust.edu.sa",
+    "notes": "Portal opens Sep 28 2026. Deadline Jan 3 2027. Decisions Feb 14 2027. Fully funded ($20k/yr stipend + housing). GPA risk: 7.5 CGPA = ~3.0/4.0, right at floor, most admits above 3.3. Age question emailed to admissions Aug 27 2026, no reply yet. No age cap found on current site. Get written confirmation before spending effort on SOP. English test mandatory. GRE recommended given GPA."
+  },
+  {
+    "id": "g4",
+    "name": "IIT Bombay — MTech AI (via GATE)",
+    "org": "IIT Bombay",
+    "deadline": "2027-02-01",
+    "status": "Track",
+    "fit": 3,
+    "link": "https://www.iitb.ac.in",
+    "notes": "Fallback if international programs don't materialize. GATE exam required — needs active prep decision. Strong credential domestically."
+  },
+  {
+    "id": "g5",
+    "name": "Fulbright-Nehru Scholarship",
+    "org": "USIEF India",
+    "deadline": "2026-10-15",
+    "status": "Track",
+    "fit": 3,
+    "link": "https://fulbrightindia.org",
+    "notes": "India-specific cycle. Covers US grad study. Check eligibility and confirm current deadline."
+  },
+  {
+    "id": "g6",
+    "name": "Ireland — PhD / Research Scholarship",
+    "org": "Irish universities",
+    "deadline": "2026-10-01",
+    "status": "Track",
+    "fit": 3,
+    "link": "",
+    "notes": "Critical Skills Employment Permit route identified for longer-term residency. Research scholarship deadline ~October. Longer-term plan — not immediate priority."
+  }
+]
