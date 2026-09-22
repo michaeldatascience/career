@@ -7,7 +7,18 @@
     "status": "Next Round",
     "fit": 4,
     "link": "https://erafellowship.org",
-    "notes": "Applied summer 2026 (rejected, 6000 applicants for 30 spots). Missed Sep 2026 deadline — IITM end-term exam same day. Next window likely early 2027. Strong fit for agentic evaluation angle. ERA targets catastrophic risk pathways — frame application accordingly, not as general AI ethics."
+    "notes": "Applied summer 2026 (rejected, 6000 applicants for 30 spots). Missed Sep 2026 deadline — IITM end-term exam same day. Next window likely early 2027. Strong fit for agentic evaluation angle. ERA targets catastrophic risk pathways — frame application accordingly, not as general AI ethics.",
+    "location": "Cambridge, UK",
+    "fees": "Stipend + travel (fully funded)",
+    "funding": "FF",
+    "elig": "OK",
+    "elig_note": "Rejected summer 2026; reapply next cycle.",
+    "links": [
+      {
+        "label": "Official page",
+        "url": "https://erafellowship.org"
+      }
+    ]
   },
   {
     "id": "f2",
@@ -17,7 +28,18 @@
     "status": "Track",
     "fit": 4,
     "link": "https://matsprogram.org",
-    "notes": "OPEN NOW. Window: Aug 25 – Oct 31 2026 (AoE). Program runs Jan 19 – Apr 10 2027. 12 weeks, $19,200 stipend + $24k compute + housing + meals + travel. Berkeley and London, remote possible in some cases. International applicants eligible. No LLMs allowed in application responses — flag this. Decisions early-mid Nov 2026. Needs one public output first — Apart Research hackathon is the stepping stone."
+    "notes": "OPEN NOW. Window: Aug 25 – Oct 31 2026 (AoE). Program runs Jan 19 – Apr 10 2027. 12 weeks, $19,200 stipend + $24k compute + housing + meals + travel. Berkeley and London, remote possible in some cases. International applicants eligible. No LLMs allowed in application responses — flag this. Decisions early-mid Nov 2026. Needs one public output first — Apart Research hackathon is the stepping stone.",
+    "location": "Berkeley / London (remote in some cases)",
+    "fees": "$19,200 stipend + $24k compute + housing",
+    "funding": "FF",
+    "elig": "OK",
+    "elig_note": "International eligible. LLM-written answers not allowed.",
+    "links": [
+      {
+        "label": "Official page",
+        "url": "https://matsprogram.org"
+      }
+    ]
   },
   {
     "id": "f3",
@@ -27,7 +49,18 @@
     "status": "Track",
     "fit": 4,
     "link": "https://apartresearch.com",
-    "notes": "Immediate entry point. 3-day hackathon format. Pipeline: Sprint → Studio (5-20% of submissions, 4-6 weeks) → Fellowship (40% of Studio, 4-6 months). Current sprint: AI Incident Response (ran Sep 11-13 2026 — check next one). Do this before MATS application. Remote-friendly, global."
+    "notes": "Immediate entry point. 3-day hackathon format. Pipeline: Sprint → Studio (5-20% of submissions, 4-6 weeks) → Fellowship (40% of Studio, 4-6 months). Current sprint: AI Incident Response (ran Sep 11-13 2026 — check next one). Do this before MATS application. Remote-friendly, global.",
+    "location": "Remote",
+    "fees": "Free",
+    "funding": "FF",
+    "elig": "OK",
+    "elig_note": "",
+    "links": [
+      {
+        "label": "Official page",
+        "url": "https://apartresearch.com"
+      }
+    ]
   },
   {
     "id": "f4",
@@ -37,37 +70,18 @@
     "status": "Track",
     "fit": 3,
     "link": "https://sparai.org",
-    "notes": "Fall 2026 closed. Spring 2027 applications open ~December 2026. Part-time remote, 5-40hrs/week, ~3 months. 130+ projects across technical safety, governance, policy, security. ~20% acceptance if you apply to 3-5 projects. Good parallel track alongside a job."
-  },
-  {
-    "id": "f5",
-    "name": "Astra Fellowship",
-    "org": "Constellation",
-    "deadline": "2027-02-01",
-    "status": "Track",
-    "fit": 3,
-    "link": "https://constellation.org/programs/astra-fellowship",
-    "notes": "Technical AI safety. More research-focused than Generator. Better fit than Generator for Michael. Check current cycle dates."
-  },
-  {
-    "id": "f6",
-    "name": "Generator Residency",
-    "org": "Kairos / Constellation",
-    "deadline": "2026-04-27",
-    "status": "Closed",
-    "fit": 3,
-    "link": "https://generatorresidency.org",
-    "notes": "Summer 2026 closed Apr 27. Next round not announced — expressed interest for next cohort. Non-research program — for ops/generalist builders. In-person Berkeley only. J-1 visa needed. $6k/mo stipend + housing + travel. Pipeline into AI safety orgs. Watch for 2027 cohort announcement."
-  },
-  {
-    "id": "f7",
-    "name": "Anthropic Fellows Program",
-    "org": "Anthropic",
-    "deadline": "2026-10-15",
-    "status": "Track",
-    "fit": 4,
-    "link": "https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/",
-    "notes": "OPEN — rolling applications, next cohort Nov 2026. 4 months full-time. $3,850 USD/week stipend + ~$15k/month compute. In-person Berkeley or London. Work auth required in US/UK/Canada — NO visa sponsorship. This is a hard blocker unless Michael relocates or gets another visa route. 80% of fellows produce papers, 40% join Anthropic. No PhD required. Strong technical background expected. Check if remote cohort possible."
+    "notes": "Fall 2026 closed. Spring 2027 applications open ~December 2026. Part-time remote, 5-40hrs/week, ~3 months. 130+ projects across technical safety, governance, policy, security. ~20% acceptance if you apply to 3-5 projects. Good parallel track alongside a job.",
+    "location": "Remote, part-time",
+    "fees": "Unpaid mentorship (mostly)",
+    "funding": "SC",
+    "elig": "OK",
+    "elig_note": "",
+    "links": [
+      {
+        "label": "Official page",
+        "url": "https://sparai.org"
+      }
+    ]
   },
   {
     "id": "f8",
@@ -77,17 +91,18 @@
     "status": "Closed",
     "fit": 3,
     "link": "https://openai.com/index/introducing-openai-safety-fellowship/",
-    "notes": "2026-27 cohort: deadline May 3 2026 (closed), program ran Sep 14 2026 – Feb 5 2027. New in 2026, pilot program. Watch for 2027-28 announcement. Priority areas: safety evaluation, agentic oversight, robustness, scalable mitigations. Empirically grounded technical work preferred."
-  },
-  {
-    "id": "f9",
-    "name": "Chevening Scholarship",
-    "org": "UK Foreign Commonwealth Office",
-    "deadline": "2026-11-04",
-    "status": "Track",
-    "fit": 4,
-    "link": "https://chevening.org",
-    "notes": "Covers UK university + return flights. Strongly favors work experience, no age cap — very strong fit given 20yr background. Deadline typically early November. Ireland/UK longer-term residency route possible post-fellowship. One of the highest-fit opportunities given Michael's profile."
+    "notes": "2026-27 cohort: deadline May 3 2026 (closed), program ran Sep 14 2026 – Feb 5 2027. New in 2026, pilot program. Watch for 2027-28 announcement. Priority areas: safety evaluation, agentic oversight, robustness, scalable mitigations. Empirically grounded technical work preferred.",
+    "location": "USA",
+    "fees": "Funded",
+    "funding": "FF",
+    "elig": "OK",
+    "elig_note": "Pilot cohort closed; watch for next.",
+    "links": [
+      {
+        "label": "Official page",
+        "url": "https://openai.com/index/introducing-openai-safety-fellowship/"
+      }
+    ]
   },
   {
     "id": "f10",
@@ -97,17 +112,18 @@
     "status": "Track",
     "fit": 3,
     "link": "https://governance.ai",
-    "notes": "Policy/governance track. Less direct than MATS but relevant pipeline. Check current cycle."
-  },
-  {
-    "id": "f11",
-    "name": "LASR Labs",
-    "org": "LASR",
-    "deadline": "",
-    "status": "Track",
-    "fit": 3,
-    "link": "https://lasrlabs.org",
-    "notes": "London-based, technical safety research. Check current cohort timeline."
+    "notes": "Policy/governance track. Less direct than MATS but relevant pipeline. Check current cycle.",
+    "location": "Oxford / remote",
+    "fees": "Varies",
+    "funding": "SC",
+    "elig": "OK",
+    "elig_note": "",
+    "links": [
+      {
+        "label": "Official page",
+        "url": "https://governance.ai"
+      }
+    ]
   },
   {
     "id": "f12",
@@ -117,7 +133,81 @@
     "status": "Track",
     "fit": 3,
     "link": "https://ml4good.org",
-    "notes": "8-day fully paid in-person bootcamp. Summer 2026 deadline was July 1 (closed). Next round likely Jan-Feb 2027 for spring cohort. Technical track (ML safety) or Governance track. Asia/East Asia cohorts being added — check. Good entry point before MATS/ERA. 98% recommendation rate. Alumni at UK AISI, MATS, CeSIA."
+    "notes": "8-day fully paid in-person bootcamp. Summer 2026 deadline was July 1 (closed). Next round likely Jan-Feb 2027 for spring cohort. Technical track (ML safety) or Governance track. Asia/East Asia cohorts being added — check. Good entry point before MATS/ERA. 98% recommendation rate. Alumni at UK AISI, MATS, CeSIA.",
+    "location": "Europe / other regions",
+    "fees": "Fully paid 8-day bootcamp",
+    "funding": "FF",
+    "elig": "OK",
+    "elig_note": "Region-based selection; check for an Asia cohort.",
+    "links": [
+      {
+        "label": "Official page",
+        "url": "https://ml4good.org"
+      }
+    ]
+  },
+  {
+    "id": "f5",
+    "name": "Astra Fellowship",
+    "org": "Constellation",
+    "deadline": "2027-02-01",
+    "status": "Track",
+    "fit": 3,
+    "link": "https://constellation.org/programs/astra-fellowship",
+    "notes": "Technical AI safety. More research-focused than Generator. Better fit than Generator for Michael. Check current cycle dates.",
+    "location": "Berkeley",
+    "fees": "Stipend (verify)",
+    "funding": "FF",
+    "elig": "RISK",
+    "elig_note": "In-person US; visa route unclear.",
+    "links": [
+      {
+        "label": "Official page",
+        "url": "https://constellation.org/programs/astra-fellowship"
+      }
+    ]
+  },
+  {
+    "id": "f6",
+    "name": "Generator Residency",
+    "org": "Kairos / Constellation",
+    "deadline": "2026-04-27",
+    "status": "Closed",
+    "fit": 3,
+    "link": "https://generatorresidency.org",
+    "notes": "Summer 2026 closed Apr 27. Next round not announced — expressed interest for next cohort. Non-research program — for ops/generalist builders. In-person Berkeley only. J-1 visa needed. $6k/mo stipend + housing + travel. Pipeline into AI safety orgs. Watch for 2027 cohort announcement.",
+    "location": "Berkeley",
+    "fees": "$6k/mo + housing + travel",
+    "funding": "FF",
+    "elig": "RISK",
+    "elig_note": "J-1 visa required.",
+    "links": [
+      {
+        "label": "Official page",
+        "url": "https://generatorresidency.org"
+      }
+    ]
+  },
+  {
+    "id": "f11",
+    "name": "LASR Labs",
+    "org": "LASR",
+    "deadline": "",
+    "status": "Track",
+    "fit": 3,
+    "link": "https://lasrlabs.org",
+    "notes": "London-based, technical safety research. Check current cohort timeline.",
+    "location": "London",
+    "fees": "Varies",
+    "funding": "SC",
+    "elig": "RISK",
+    "elig_note": "UK presence likely needed.",
+    "links": [
+      {
+        "label": "Official page",
+        "url": "https://lasrlabs.org"
+      }
+    ]
   },
   {
     "id": "f13",
@@ -127,7 +217,18 @@
     "status": "Track",
     "fit": 4,
     "link": "https://opportunitydesk.org/2026/04/02/cbai-summer-research-fellowship-in-ai-safety-2026-fully-funded/",
-    "notes": "Fully-funded 9-week research fellowship. $10k compute support per fellow. Extension up to 6 months. Open to undergrads, masters, PhDs, postdocs, and recent graduates transitioning into safety research. Technical safety, AI governance, and technical governance tracks. 2026 deadline was Apr 12 — watch for 2027 cycle. Alumni joined Goodfire and Redwood, published at NeurIPS/ICLR."
+    "notes": "Fully-funded 9-week research fellowship. $10k compute support per fellow. Extension up to 6 months. Open to undergrads, masters, PhDs, postdocs, and recent graduates transitioning into safety research. Technical safety, AI governance, and technical governance tracks. 2026 deadline was Apr 12 — watch for 2027 cycle. Alumni joined Goodfire and Redwood, published at NeurIPS/ICLR.",
+    "location": "Cambridge, MA",
+    "fees": "Fully funded + $10k compute",
+    "funding": "FF",
+    "elig": "RISK",
+    "elig_note": "In-person US; visa route unclear.",
+    "links": [
+      {
+        "label": "Official page",
+        "url": "https://opportunitydesk.org/2026/04/02/cbai-summer-research-fellowship-in-ai-safety-2026-fully-funded/"
+      }
+    ]
   },
   {
     "id": "f14",
@@ -137,7 +238,18 @@
     "status": "Closed",
     "fit": 2,
     "link": "https://fas.org/career/ai-safety-pef/",
-    "notes": "2026 deadline was Sep 7 (closed). Part-time hybrid, 5hrs/week, Sep 30 2026 – Feb 28 2027. $5k stipend + $1k merit award. In-person retreats in California and Washington DC. Policy/governance focus — less direct fit for Michael's technical background. Watch for 2027 cycle."
+    "notes": "2026 deadline was Sep 7 (closed). Part-time hybrid, 5hrs/week, Sep 30 2026 – Feb 28 2027. $5k stipend + $1k merit award. In-person retreats in California and Washington DC. Policy/governance focus — less direct fit for Michael's technical background. Watch for 2027 cycle.",
+    "location": "Hybrid, US",
+    "fees": "$5,000 stipend",
+    "funding": "SC",
+    "elig": "RISK",
+    "elig_note": "US policy focus, in-person events.",
+    "links": [
+      {
+        "label": "Official page",
+        "url": "https://fas.org/career/ai-safety-pef/"
+      }
+    ]
   },
   {
     "id": "f15",
@@ -147,6 +259,59 @@
     "status": "Track",
     "fit": 2,
     "link": "https://www.anthropic.com/claude-corps/fellow",
-    "notes": "Cohort 3 starting Aug 2027 — applications open Sep 2026. Focus: societal challenges + AI tools. Selection based on hands-on AI comfort, learning speed, communication, self-direction. No specific background required. Less technical than Anthropic Fellows. Work auth in eligible countries likely required — check."
+    "notes": "Cohort 3 starting Aug 2027 — applications open Sep 2026. Focus: societal challenges + AI tools. Selection based on hands-on AI comfort, learning speed, communication, self-direction. No specific background required. Less technical than Anthropic Fellows. Work auth in eligible countries likely required — check.",
+    "location": "Varies",
+    "fees": "Funded",
+    "funding": "FF",
+    "elig": "RISK",
+    "elig_note": "Work authorisation likely required — verify.",
+    "links": [
+      {
+        "label": "Official page",
+        "url": "https://www.anthropic.com/claude-corps/fellow"
+      }
+    ]
+  },
+  {
+    "id": "f7",
+    "name": "Anthropic Fellows Program",
+    "org": "Anthropic",
+    "deadline": "2026-10-15",
+    "status": "Track",
+    "fit": 2,
+    "link": "https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/",
+    "notes": "OPEN — rolling applications, next cohort Nov 2026. 4 months full-time. $3,850 USD/week stipend + ~$15k/month compute. In-person Berkeley or London. Work auth required in US/UK/Canada — NO visa sponsorship. This is a hard blocker unless Michael relocates or gets another visa route. 80% of fellows produce papers, 40% join Anthropic. No PhD required. Strong technical background expected. Check if remote cohort possible.",
+    "location": "Berkeley / London",
+    "fees": "$3,850/week + ~$15k/mo compute",
+    "funding": "FF",
+    "elig": "BLOCKED",
+    "elig_note": "Requires existing work authorisation in US/UK/Canada; no visa sponsorship.",
+    "links": [
+      {
+        "label": "Official page",
+        "url": "https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/"
+      }
+    ]
+  },
+  {
+    "id": "f9",
+    "name": "Chevening Scholarship",
+    "org": "UK Foreign Commonwealth Office",
+    "deadline": "2026-10-06",
+    "status": "Closed",
+    "fit": 1,
+    "link": "https://chevening.org",
+    "notes": "2027-28 deadline was 6 Oct 2026 (not Nov). Blocked on degree timing — see eligibility.",
+    "location": "UK",
+    "fees": "Tuition + living + flights",
+    "funding": "FF",
+    "elig": "BLOCKED",
+    "elig_note": "Degree must be completed ≥2 yrs before deadline + 2 yrs post-degree work. IITM BS finishes Jan 2027.",
+    "links": [
+      {
+        "label": "Official page",
+        "url": "https://chevening.org"
+      }
+    ]
   }
 ]

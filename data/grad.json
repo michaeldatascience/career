@@ -1,142 +1,336 @@
 [
   {
-    "id": "g1",
-    "name": "MBZUAI — MS Machine Learning / AI Safety",
-    "org": "Mohamed bin Zayed University of AI",
-    "deadline": "2027-01-15",
-    "status": "Track",
-    "fit": 5,
-    "link": "https://mbzuai.ac.ae",
-    "notes": "Primary funded MS target. Abu Dhabi. Fully funded (tuition + stipend). Faculty targets: Umang Bhatt (explainability), Nils Lukas (ML security). Draft inquiry email prepared — not yet sent. CGPA meets floor (~3.0/4.0 equiv) but not comfortably. Action: send faculty cold emails now, then apply when portal opens."
-  },
-  {
-    "id": "g2",
-    "name": "IIT Madras — Web-Enabled MTech in AI",
-    "org": "IIT Madras",
-    "deadline": "",
+    "id": "g4",
+    "name": "IIT Bombay — MTech via GATE 2027 (CSE / AI & DS)",
+    "org": "IIT Bombay (also IITM, IITH, IISc via same GATE score)",
+    "location": "Mumbai, IN (full-time, on campus)",
+    "deadline": "2026-09-27",
+    "fees": "~₹1.3L total (TA category); ~₹2.4–3L non-TA",
+    "funding": "TA",
+    "stipend": "₹12,400/month TA (~₹2.98L over 2 yrs)",
+    "elig": "OK",
+    "elig_note": "No upper age limit for GATE. Final-year students can register, so the Jan 2027 BS completion is fine. 4-year BS is a valid GATE qualifier; confirm IITB department-level 'valid UG degree, 60%' clause accepts IITM BS (7.5 CGPA clears 60%).",
     "status": "Track",
     "fit": 4,
-    "link": "https://onlinedegree.iitm.ac.in",
-    "notes": "No GATE required. Immediately accessible as existing IITM BS student. Most accessible MTech path. Low cost. Check current application cycle and whether BS completion is required first."
+    "links": [
+      {
+        "label": "GATE 2027 portal",
+        "url": "https://gate2027.iitm.ac.in"
+      },
+      {
+        "label": "IITB fee structure (CollegeDekho)",
+        "url": "https://www.collegedekho.com/colleges/iitb-fee-structure"
+      },
+      {
+        "label": "IITB MTech CSE details",
+        "url": "https://collegedunia.com/university/25703-iit-bombay-indian-institute-of-technology-iitb-mumbai/master-of-technology-mtech-computer-science-and-engineering-2407"
+      }
+    ],
+    "notes": "URGENT: GATE 2027 registration closes 27 Sep 2026 without late fee (late-fee window runs a bit longer). Exam 6–21 Feb 2027. Counselling via COAP ~May–Jun 2027.\n\nPaper choice: GATE DA (Data Science & AI) maps directly onto the IITM BS syllabus. GATE CS is the standard route into IITB CSE. One score feeds IITB, IITM, IITH, IISc and others, valid 3 years.\n\nReality check: TA stipend is not a household income. The real cost is 2 years full-time residential in Powai and income forgone. Only makes sense if the degree + IIT network outweighs that.\n\nOpen: verify whether IITB C-MInDS AI & DS MTech takes GATE DA."
+  },
+  {
+    "id": "g1",
+    "name": "MBZUAI — MSc Machine Learning",
+    "org": "Mohamed bin Zayed University of AI",
+    "location": "Abu Dhabi, UAE",
+    "deadline": "2027-01-15",
+    "fees": "Tuition covered",
+    "funding": "FF",
+    "stipend": "Monthly stipend + housing (verify amount)",
+    "elig": "RISK",
+    "elig_note": "CGPA 7.5 is near the floor. Degree completes Jan 2027; final-year applicants usually accepted with provisional transcript — verify.",
+    "status": "Track",
+    "fit": 5,
+    "links": [
+      {
+        "label": "MBZUAI",
+        "url": "https://mbzuai.ac.ae"
+      }
+    ],
+    "notes": "Primary funded MS target. Faculty targets: Umang Bhatt (explainability), Nils Lukas (ML security). Draft inquiry email prepared, not sent.\n\nNext: send faculty emails before applying; confirm 2027 deadline on the official admissions page."
   },
   {
     "id": "g3",
     "name": "KAUST — MS Computer Science (AI/ML)",
     "org": "KAUST",
+    "location": "Thuwal, Saudi Arabia",
     "deadline": "2027-01-03",
+    "fees": "Tuition covered",
+    "funding": "FF",
+    "stipend": "~$20k/yr + housing + health + travel",
+    "elig": "RISK",
+    "elig_note": "7.5 CGPA ≈ 3.0/4.0, most admits above 3.3. Age question emailed 27 Aug 2026, no reply. Deadline falls before BS completion (Jan 2027) — provisional transcript needed.",
     "status": "Track",
     "fit": 3,
-    "link": "https://admissions.kaust.edu.sa",
-    "notes": "Portal opens Sep 28 2026. Fully funded: $20k/yr stipend + housing + health + travel. GPA risk: 7.5 CGPA = ~3.0/4.0, most admits above 3.3. Age question emailed Aug 27 2026 — no reply yet. No age cap found on current site. English test mandatory. GRE recommended given GPA. Get written age confirmation before investing effort in SOP."
-  },
-  {
-    "id": "g4",
-    "name": "IIT Bombay — MTech AI (via GATE)",
-    "org": "IIT Bombay",
-    "deadline": "2027-02-01",
-    "status": "Track",
-    "fit": 3,
-    "link": "https://www.iitb.ac.in",
-    "notes": "Fallback if international programs don't materialize. GATE exam required — active prep decision needed. Strong domestic credential."
-  },
-  {
-    "id": "g5",
-    "name": "Fulbright-Nehru Scholarship",
-    "org": "USIEF India",
-    "deadline": "2026-10-15",
-    "status": "Track",
-    "fit": 3,
-    "link": "https://fulbrightindia.org",
-    "notes": "India-specific cycle. Covers US grad study. Check eligibility and current deadline — may have passed for 2026 cycle."
-  },
-  {
-    "id": "g6",
-    "name": "Ireland — PhD / Research Scholarship",
-    "org": "Irish Universities",
-    "deadline": "2026-10-01",
-    "status": "Track",
-    "fit": 3,
-    "link": "",
-    "notes": "Critical Skills Employment Permit route for longer-term residency. Research scholarship deadline ~October. Longer-term plan — not immediate priority."
+    "links": [
+      {
+        "label": "KAUST admissions",
+        "url": "https://admissions.kaust.edu.sa"
+      }
+    ],
+    "notes": "Portal opens 28 Sep 2026. Decisions ~14 Feb 2027. English test mandatory; GRE recommended given GPA.\n\nGet written age/eligibility confirmation before investing in the SOP."
   },
   {
     "id": "g7",
     "name": "EMAI — Erasmus Mundus Joint Master in AI",
-    "org": "UPF, Sapienza, Radboud, Ljubljana",
+    "org": "UPF · Sapienza · Radboud · Ljubljana",
+    "location": "Spain / Italy / NL / Slovenia",
     "deadline": "2026-12-20",
+    "fees": "Waived for scholarship holders",
+    "funding": "FF",
+    "stipend": "€1,400/month up to 24 months + travel",
+    "elig": "RISK",
+    "elig_note": "Scholarship ranking is competitive on transcript. Final-year applicants generally allowed if degree completes before start — verify.",
     "status": "Track",
     "fit": 4,
-    "link": "https://www.upf.edu/web/emai",
-    "notes": "Fully funded Erasmus Mundus scholarship: tuition waived + €1,400/month stipend + travel. 2-year joint degree across 4 European universities (Spain, Italy, Netherlands, Slovenia). Scholarship application period 1: Nov 15 – Dec 20 2026. Period 2 (tuition waiver only): until Mar 18 2027. Requires: transcripts, CV, motivation letter, English proof (IELTS/TOEFL), 2 reference letters, short intro video. Check 2027 intake dates — current listing may be for 2026 entry. Very strong fit given fully funded + Europe mobility + no single-country tuition."
+    "links": [
+      {
+        "label": "EMAI home",
+        "url": "https://www.upf.edu/web/emai"
+      },
+      {
+        "label": "EMAI application & fees",
+        "url": "https://www.upf.edu/web/emai/access-admission"
+      }
+    ],
+    "notes": "Last cycle: scholarship window 15 Nov – 20 Dec; tuition-waiver-only window to mid-March. Assumed same pattern for 2027 intake — verify.\n\nDocs: transcripts, CV, motivation letter, English proof, 2 references, short intro video."
   },
   {
     "id": "g8",
-    "name": "Erasmus Mundus 2027 — new AI cohorts",
+    "name": "Erasmus Mundus 2027 — new AI/data programmes",
     "org": "European Commission / Erasmus+",
+    "location": "Multi-country, Europe",
     "deadline": "2026-12-01",
+    "fees": "Waived for scholarship holders",
+    "funding": "FF",
+    "stipend": "€1,400/month up to 24 months",
+    "elig": "OK",
+    "elig_note": "Open worldwide. Apply per programme.",
     "status": "Track",
     "fit": 4,
-    "link": "https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters",
-    "notes": "37 new Erasmus Mundus programmes announced July 2026, including several with AI/data/compute focus. Applications expected to open autumn 2026, programs start Sep 2027. Fully funded: tuition waived + €1,400/month + travel. Check catalogue for new AI-specific programs. Apply to 2-3 programs simultaneously — applications are per-program, not centralised."
+    "links": [
+      {
+        "label": "Erasmus+ EMJM page",
+        "url": "https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters"
+      },
+      {
+        "label": "2027 catalogue update",
+        "url": "https://erasmuscatalogue.com/erasmus-mundus-catalogue-update-2027/"
+      }
+    ],
+    "notes": "37 new EMJMs announced Jul 2026, applications opening autumn 2026, start Sep 2027. Deadlines differ per programme (typically Oct–Jan).\n\nNext: shortlist 2–3 AI/data programmes from the catalogue."
   },
   {
     "id": "g9",
     "name": "TU Darmstadt — MSc AI & ML",
     "org": "Technical University of Darmstadt",
+    "location": "Darmstadt, DE (Hesse)",
     "deadline": "2027-05-15",
+    "fees": "No tuition; ~€300/sem contribution",
+    "funding": "TW",
+    "stipend": "None — self-fund living",
+    "elig": "RISK",
+    "elig_note": "APS certificate required (8–12 weeks). dMAT may apply from Summer 2027 intakes depending on degree field — verify.",
     "status": "Track",
     "fit": 3,
-    "link": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4258/",
-    "notes": "Germany public university — zero tuition (Hesse state, no non-EU surcharge). Only semester contribution ~€300. English-taught. 4 semesters. Part of Hessian AI Center. DAAD-listed. Winter intake. Requirements: relevant BSc, math/CS foundation. APS certification required for Indian students (allow 8-12 weeks). Solid research connections to industry. Budget: ~€12-15k/year living."
-  },
-  {
-    "id": "g10",
-    "name": "RWTH Aachen — MSc Data Science (AI track)",
-    "org": "RWTH Aachen University",
-    "deadline": "2027-03-01",
-    "status": "Track",
-    "fit": 3,
-    "link": "https://www.rwth-aachen.de",
-    "notes": "Zero tuition — North Rhine-Westphalia state, no non-EU surcharge. Semester fee ~€300. English-taught. Strong industry ties (Mercedes, Ford labs nearby). Winter and summer intakes. Requires: relevant BSc, math/CS credits. APS certification required. Budget: ~€12-15k/year. Good option if MBZUAI/Erasmus Mundus don't work out."
+    "links": [
+      {
+        "label": "DAAD listing",
+        "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4258/"
+      }
+    ],
+    "notes": "Hesse charges no non-EU tuition. Deadline date is placeholder — verify on official page."
   },
   {
     "id": "g11",
-    "name": "Saarland University — MSc Data Science & AI",
-    "org": "Universität des Saarlandes",
+    "name": "Saarland — MSc Data Science & AI",
+    "org": "Universität des Saarlandes (DFKI, MPI)",
+    "location": "Saarbrücken, DE",
     "deadline": "2027-05-15",
+    "fees": "No tuition; ~€300/sem",
+    "funding": "TW",
+    "stipend": "None",
+    "elig": "RISK",
+    "elig_note": "C1 English required; medium-of-instruction letter NOT accepted — needs IELTS/TOEFL. APS required.",
     "status": "Track",
     "fit": 3,
-    "link": "https://www.uni-saarland.de",
-    "notes": "Zero tuition. Semester fee ~€300. English-taught. Home of DFKI (German Research Center for AI) — direct research access. C1 English required (IELTS equivalent) — medium-of-instruction certificate NOT accepted. Winter and summer intakes. APS certification required for Indian students. Budget: ~€10-12k/year (Saarbrücken is cheaper than Munich/Berlin)."
+    "links": [
+      {
+        "label": "Saarland University",
+        "url": "https://www.uni-saarland.de"
+      }
+    ],
+    "notes": "DFKI + Max Planck on campus. Cheaper city. Winter and summer intakes. Deadline placeholder — verify."
   },
   {
-    "id": "g12",
-    "name": "Saarland / IMPRS-CS — PhD in CS/AI",
-    "org": "Max Planck Institute for Informatics",
-    "deadline": "2026-11-01",
+    "id": "g10",
+    "name": "RWTH Aachen — MSc Data Science",
+    "org": "RWTH Aachen University",
+    "location": "Aachen, DE (NRW)",
+    "deadline": "2027-03-01",
+    "fees": "No tuition; ~€300/sem",
+    "funding": "TW",
+    "stipend": "None",
+    "elig": "RISK",
+    "elig_note": "Some RWTH CS programmes require German as well as English — confirm this one is English-only. APS required.",
     "status": "Track",
     "fit": 3,
-    "link": "https://www.mpi-inf.mpg.de/departments/imprs",
-    "notes": "International Max Planck Research School for Computer Science. Fully funded PhD: salary ~€2,000-2,500/month (TVöD). No tuition. Saarbrücken campus. Competitive but skips the MS step entirely. Worth tracking if research output materialises. Nov deadline typical. Requires strong research background or publications."
+    "links": [
+      {
+        "label": "RWTH",
+        "url": "https://www.rwth-aachen.de"
+      }
+    ],
+    "notes": "Deadline placeholder — verify."
   },
   {
     "id": "g13",
     "name": "TU Berlin — MSc Computer Science (AI focus)",
     "org": "Technical University of Berlin",
+    "location": "Berlin, DE",
     "deadline": "2027-05-15",
+    "fees": "No tuition; ~€350/sem",
+    "funding": "TW",
+    "stipend": "None",
+    "elig": "RISK",
+    "elig_note": "Confirm English-taught track. APS required.",
     "status": "Track",
     "fit": 3,
-    "link": "https://www.tu.berlin",
-    "notes": "Zero tuition — Berlin state, no non-EU surcharge. Semester fee ~€350. English-taught programs available. Berlin startup ecosystem (Aleph Alpha, deeptech hubs). Winter intake. APS certification required. Budget: ~€14-16k/year (Berlin cost of living rising). AI specialisation within general CS MSc."
+    "links": [
+      {
+        "label": "TU Berlin",
+        "url": "https://www.tu.berlin"
+      }
+    ],
+    "notes": "Higher Berlin living costs. Deadline placeholder — verify."
+  },
+  {
+    "id": "g15",
+    "name": "Tübingen — MSc Machine Learning",
+    "org": "University of Tübingen (Cyber Valley, MPI-IS)",
+    "location": "Tübingen, DE (BW)",
+    "deadline": "2027-05-15",
+    "fees": "€1,500/sem non-EU tuition + semester fee",
+    "funding": "LT",
+    "stipend": "None",
+    "elig": "RISK",
+    "elig_note": "Needs ≥18 CS credits incl. algorithms/data structures, maths credits, IELTS 7.0 / TOEFL 100. APS required.",
+    "status": "Track",
+    "fit": 4,
+    "links": [
+      {
+        "label": "Shortlist source (ThinkMile)",
+        "url": "https://thinkmile.in/blog/best-ai-universities-in-germany-for-indian-students"
+      }
+    ],
+    "notes": "Strongest pure-ML research environment in Germany. Not free (Baden-Württemberg surcharge) but cheap. Winter-only intake. Deadline placeholder — verify."
+  },
+  {
+    "id": "g12",
+    "name": "IMPRS-CS — Direct PhD (CS/AI)",
+    "org": "Max Planck Institute for Informatics",
+    "location": "Saarbrücken, DE",
+    "deadline": "2026-11-01",
+    "fees": "None",
+    "funding": "FF",
+    "stipend": "Salaried PhD position",
+    "elig": "RISK",
+    "elig_note": "Direct-from-bachelor route is competitive; needs visible research output.",
+    "status": "Track",
+    "fit": 2,
+    "links": [
+      {
+        "label": "IMPRS-CS",
+        "url": "https://www.mpi-inf.mpg.de/departments/imprs"
+      }
+    ],
+    "notes": "Skips the MS entirely. Realistic only after a paper/workshop output. Deadline placeholder — verify."
+  },
+  {
+    "id": "g2",
+    "name": "IIT Madras — Web-Enabled MTech in AI",
+    "org": "IIT Madras CODE",
+    "location": "Online + exam centres, IN",
+    "deadline": "2027-05-31",
+    "fees": "₹8.55–9.27L total (MTech); PG Diploma ₹5.22–5.58L",
+    "funding": "SP",
+    "stipend": "None",
+    "elig": "RISK",
+    "elig_note": "Listed qualifier is BE/BTech (any branch, maths in 12th) or MSc/MCA — whether IITM BS counts must be confirmed. 2+ yrs work experience ✓. 2026 cycle closed 31 May; earliest is 2027 cycle, after BS completion.",
+    "status": "Track",
+    "fit": 3,
+    "links": [
+      {
+        "label": "Web MTech portal",
+        "url": "https://code.iitm.ac.in/webmtech"
+      },
+      {
+        "label": "IITM press release (2026 cycle)",
+        "url": "https://www.iitm.ac.in/happenings/press-releases-and-coverages/iit-madras-invites-applications-web-enabled-mtech-pg"
+      },
+      {
+        "label": "Fees & syllabus (Careers360)",
+        "url": "https://engineering.careers360.com/articles/iit-madras-mtech-program-odg"
+      }
+    ],
+    "notes": "Not funded — self-paid ~₹9L over ~3 years, part-time, keeps job/income.\n\nEntrance test: probability & statistics, linear algebra, optimisation, basic ML — close to the BS syllabus.\n\nDeadline shown = assumed 2027 cycle (mirrors 2026's 31 May)."
+  },
+  {
+    "id": "g6",
+    "name": "Ireland — PhD / Research Scholarship",
+    "org": "Irish universities",
+    "location": "Ireland",
+    "deadline": "",
+    "fees": "Varies",
+    "funding": "SC",
+    "stipend": "Varies",
+    "elig": "RISK",
+    "elig_note": "Vague entry — no specific programme identified yet.",
+    "status": "Track",
+    "fit": 2,
+    "links": [],
+    "notes": "Critical Skills Employment Permit route for longer-term residency. Needs concrete programme research before it's actionable."
   },
   {
     "id": "g14",
-    "name": "Chevening + UK University MSc AI",
-    "org": "UK FCO + UK universities",
-    "deadline": "2026-11-04",
-    "status": "Track",
-    "fit": 4,
-    "link": "https://chevening.org",
-    "notes": "Chevening covers tuition + stipend for 1-year UK MSc. Strong fit given work experience (explicitly valued, no age cap). Can target UCL, Edinburgh, Imperial, Southampton AI programs. Apply Chevening first, then identify specific program. This doubles as a grad program AND a fellowship — highest leverage application in the pipeline."
+    "name": "Chevening + UK MSc",
+    "org": "UK FCDO",
+    "location": "UK",
+    "deadline": "2026-10-06",
+    "fees": "Tuition covered",
+    "funding": "FF",
+    "stipend": "Living allowance + flights",
+    "elig": "BLOCKED",
+    "elig_note": "Undergraduate degree must be completed ≥2 years before the application deadline, plus 2 yrs work experience after the degree. IITM BS completes Jan 2027 → not eligible for 2027-28 or 2028-29; earliest realistic cycle ~2030.",
+    "status": "Closed",
+    "fit": 1,
+    "links": [
+      {
+        "label": "Chevening timeline",
+        "url": "https://www.chevening.org/scholarships/application-timeline/"
+      }
+    ],
+    "notes": "2027-28 deadline was 6 Oct 2026. Previously rated high-fit on work experience — that was wrong because the experience must post-date the degree."
+  },
+  {
+    "id": "g5",
+    "name": "Fulbright-Nehru Master's Fellowship",
+    "org": "USIEF India",
+    "location": "USA",
+    "deadline": "2026-05-14",
+    "fees": "Tuition covered",
+    "funding": "FF",
+    "stipend": "Living + travel + insurance",
+    "elig": "BLOCKED",
+    "elig_note": "Fields restricted to economics, environment, higher-ed admin, international affairs/law, journalism, public admin, public health, urban planning, gender studies, arts management. CS/AI/DS not eligible.",
+    "status": "Closed",
+    "fit": 1,
+    "links": [
+      {
+        "label": "USIEF Master's page",
+        "url": "https://www.usief.org.in/fulbright-fellowships/fellowships-for-indian-citizen/fulbright-nehru-masters-fellowships/"
+      }
+    ],
+    "notes": "Open to Indians, but not for this field. The earlier 15 Oct deadline was wrong — the window typically runs Feb–May."
   }
 ]

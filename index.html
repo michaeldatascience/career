@@ -2,632 +2,192 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Michael — Career Tracker</title>
 <style>
-  :root {
-    --bg: #0D1117;
-    --bg-card: #161B22;
-    --bg-hover: #1C2128;
-    --border: #30363D;
-    --text: #E6EDF3;
-    --text-muted: #8B949E;
-    --text-dim: #484F58;
-    --accent: #58A6FF;
-    --accent-dim: rgba(88,166,255,.12);
-    --yellow: #D29922;
-    --yellow-dim: rgba(210,153,34,.15);
-    --green: #3FB950;
-    --green-dim: rgba(63,185,80,.12);
-    --red: #F85149;
-    --red-dim: rgba(248,81,73,.12);
-    --grey-dim: rgba(139,148,158,.12);
-    --purple: #A371F7;
-    --purple-dim: rgba(163,113,247,.15);
-    --font-mono: 'SF Mono','Fira Code','Consolas',monospace;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 1.5; min-height: 100vh; }
-
-  .shell { display: flex; height: 100vh; overflow: hidden; }
-  .sidebar { width: 210px; flex-shrink: 0; border-right: 1px solid var(--border); display: flex; flex-direction: column; }
-  .sidebar-header { padding: 18px 16px 14px; border-bottom: 1px solid var(--border); }
-  .sidebar-header .name { font-size: 13px; font-weight: 600; }
-  .sidebar-header .label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-  .nav { padding: 10px 8px; flex: 1; }
-  .nav-item { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 6px; cursor: pointer; font-size: 13px; color: var(--text-muted); transition: background .1s, color .1s; margin-bottom: 1px; user-select: none; }
-  .nav-item:hover { background: var(--bg-hover); color: var(--text); }
-  .nav-item.active { background: var(--accent-dim); color: var(--accent); }
-  .nav-count { margin-left: auto; font-size: 11px; background: var(--bg-hover); padding: 1px 6px; border-radius: 10px; color: var(--text-muted); min-width: 20px; text-align: center; }
-  .sidebar-footer { padding: 12px 16px; border-top: 1px solid var(--border); }
-  .sidebar-footer .meta { font-size: 11px; color: var(--text-dim); line-height: 1.6; }
-  .sidebar-footer a { color: var(--text-dim); text-decoration: none; }
-  .sidebar-footer a:hover { color: var(--accent); }
-
-  .main { flex: 1; overflow-y: auto; }
-  .page { display: none; padding: 28px 32px; max-width: 1060px; }
-  .page.active { display: block; }
-
-  .page-header { margin-bottom: 22px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
-  .page-title { font-size: 18px; font-weight: 600; }
-  .page-subtitle { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
-
-  .btn { display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; border: 1px solid var(--border); background: var(--bg-card); color: var(--text); transition: background .1s; white-space: nowrap; }
-  .btn:hover { background: var(--bg-hover); }
-  .btn-primary { background: var(--accent); border-color: transparent; color: #0D1117; font-weight: 600; }
-  .btn-primary:hover { opacity: .88; background: var(--accent); }
-
-  .stats-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
-  .stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
-  .stat-value { font-size: 22px; font-weight: 700; }
-  .stat-label { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
-
-  .filters { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
-  .filter-btn { padding: 3px 10px; border-radius: 20px; font-size: 12px; cursor: pointer; border: 1px solid var(--border); background: transparent; color: var(--text-muted); transition: all .1s; }
-  .filter-btn:hover { border-color: var(--text-muted); color: var(--text); }
-  .filter-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
-
-  .table-wrap { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-  table { width: 100%; border-collapse: collapse; }
-  thead th { background: var(--bg-card); padding: 9px 13px; text-align: left; font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .04em; border-bottom: 1px solid var(--border); white-space: nowrap; }
-  tbody tr { border-bottom: 1px solid var(--border); transition: background .08s; cursor: pointer; }
-  tbody tr:last-child { border-bottom: none; }
-  tbody tr:hover { background: var(--bg-hover); }
-  tbody tr.row-amber { background: rgba(210,153,34,.06); }
-  tbody tr.row-red { background: rgba(248,81,73,.05); }
-  tbody td { padding: 10px 13px; vertical-align: middle; }
-
-  .td-name { font-weight: 500; font-size: 13px; }
-  .td-name a { color: var(--text); text-decoration: none; }
-  .td-name a:hover { color: var(--accent); }
-  .td-org { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-  .td-deadline { font-family: var(--font-mono); font-size: 12px; white-space: nowrap; }
-  .deadline-past { color: var(--text-dim); }
-  .deadline-soon { color: var(--yellow); }
-  .deadline-critical { color: var(--red); }
-  .deadline-none { color: var(--text-dim); }
-
-  .badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 500; white-space: nowrap; }
-  .badge::before { content:''; width:5px; height:5px; border-radius:50%; flex-shrink:0; }
-  .badge-track { background: var(--yellow-dim); color: var(--yellow); }
-  .badge-track::before { background: var(--yellow); }
-  .badge-applied { background: var(--accent-dim); color: var(--accent); }
-  .badge-applied::before { background: var(--accent); }
-  .badge-rejected { background: var(--red-dim); color: var(--red); }
-  .badge-rejected::before { background: var(--red); }
-  .badge-closed { background: var(--grey-dim); color: var(--text-muted); }
-  .badge-closed::before { background: var(--text-dim); }
-  .badge-next-round { background: var(--green-dim); color: var(--green); }
-  .badge-next-round::before { background: var(--green); }
-  .badge-shortlisted { background: var(--purple-dim); color: var(--purple); }
-  .badge-shortlisted::before { background: var(--purple); }
-
-  .fit { display: flex; gap: 3px; align-items: center; }
-  .fit-dot { width: 6px; height: 6px; border-radius: 50%; }
-  .fit-filled { background: var(--accent); }
-  .fit-empty { background: var(--border); }
-
-  .note-cell { font-size: 12px; color: var(--text-muted); max-width: 260px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-  .del-btn { opacity: 0; padding: 2px 6px; border-radius: 4px; background: transparent; border: 1px solid var(--border); color: var(--text-muted); cursor: pointer; font-size: 11px; transition: opacity .1s; }
-  tr:hover .del-btn { opacity: 1; }
-  .del-btn:hover { background: var(--red-dim); color: var(--red); border-color: var(--red); }
-
-  .empty-row td { text-align: center; padding: 40px; color: var(--text-muted); font-size: 13px; }
-
-  /* Modal */
-  .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.65); z-index: 100; align-items: center; justify-content: center; }
-  .overlay.open { display: flex; }
-  .modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; width: 520px; max-width: 96vw; max-height: 92vh; overflow-y: auto; }
-  .modal-head { padding: 16px 18px 13px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-  .modal-head h2 { font-size: 14px; font-weight: 600; }
-  .modal-close { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 20px; line-height: 1; padding: 0 4px; }
-  .modal-close:hover { color: var(--text); }
-  .modal-body { padding: 18px; display: flex; flex-direction: column; gap: 13px; }
-  .modal-foot { padding: 13px 18px; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 8px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .form-group { display: flex; flex-direction: column; gap: 4px; }
-  .form-label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .04em; }
-  .form-input, .form-select, .form-textarea { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 7px 10px; font-size: 13px; color: var(--text); font-family: inherit; outline: none; width: 100%; }
-  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--accent); }
-  .form-textarea { resize: vertical; min-height: 72px; }
-
-  /* Resume page */
-  .resume-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px; }
-  .rcard { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
-  .rcard-title { font-size: 13px; font-weight: 600; margin-bottom: 3px; }
-  .rcard-target { font-size: 11px; color: var(--text-muted); margin-bottom: 12px; }
-  .check-list { display: flex; flex-direction: column; gap: 7px; }
-  .check-item { display: flex; align-items: flex-start; gap: 7px; font-size: 12px; line-height: 1.4; }
-  .check-icon { flex-shrink: 0; margin-top: 1px; font-style: normal; }
-  .check-ok { color: var(--green); }
-  .check-warn { color: var(--yellow); }
-  .check-bad { color: var(--red); }
-  .check-text { color: var(--text-muted); }
-
-  /* Loading */
-  .loading { text-align: center; padding: 60px 24px; color: var(--text-muted); font-size: 13px; }
-
-  /* Error banner */
-  .error-banner { background: var(--red-dim); border: 1px solid rgba(248,81,73,.3); border-radius: 6px; padding: 10px 13px; font-size: 12px; color: var(--red); margin-bottom: 16px; display: none; }
-
-  @media (max-width: 680px) {
-    .shell { flex-direction: column; height: auto; }
-    .sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--border); }
-    .nav { display: flex; flex-wrap: wrap; gap: 4px; }
-    .main { overflow-y: unset; }
-    .page { padding: 16px; }
-    .stats-strip { grid-template-columns: 1fr 1fr; }
-    .resume-grid { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; }
-  }
+:root{--bg:#0D1117;--card:#161B22;--hover:#1C2128;--border:#30363D;--text:#E6EDF3;--muted:#8B949E;--dim:#484F58;
+--accent:#58A6FF;--accent-d:rgba(88,166,255,.12);--yellow:#D29922;--yellow-d:rgba(210,153,34,.15);--green:#3FB950;--green-d:rgba(63,185,80,.12);
+--red:#F85149;--red-d:rgba(248,81,73,.12);--grey-d:rgba(139,148,158,.12);--purple:#A371F7;--purple-d:rgba(163,113,247,.15);
+--mono:'SF Mono','Fira Code',Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.shell{display:flex;height:100vh;overflow:hidden}
+.side{width:200px;flex-shrink:0;border-right:1px solid var(--border);display:flex;flex-direction:column}
+.side-h{padding:18px 16px 14px;border-bottom:1px solid var(--border)}.side-h b{font-size:13px}.side-h div{font-size:11px;color:var(--muted)}
+.nav{padding:10px 8px;flex:1}
+.nav-i{display:flex;gap:8px;align-items:center;padding:7px 10px;border-radius:6px;cursor:pointer;font-size:13px;color:var(--muted);user-select:none}
+.nav-i:hover{background:var(--hover);color:var(--text)}.nav-i.on{background:var(--accent-d);color:var(--accent)}
+.cnt{margin-left:auto;font-size:11px;background:var(--hover);padding:1px 6px;border-radius:10px}
+.side-f{padding:12px 16px;border-top:1px solid var(--border);font-size:11px;color:var(--dim)}
+.main{flex:1;overflow-y:auto}
+.page{display:none;padding:24px 28px}.page.on{display:block}
+.ph{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:16px;gap:16px;flex-wrap:wrap}
+.ph h1{font-size:18px}.ph p{font-size:12px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 14px}
+.stat b{font-size:20px;display:block}.stat span{font-size:11px;color:var(--muted)}
+.bar{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.fb{padding:3px 10px;border-radius:20px;font-size:12px;cursor:pointer;border:1px solid var(--border);background:none;color:var(--muted)}
+.fb:hover{color:var(--text)}.fb.on{border-color:var(--accent);color:var(--accent);background:var(--accent-d)}
+.tog{margin-left:auto;font-size:12px;color:var(--muted);display:flex;gap:6px;align-items:center;cursor:pointer}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-bottom:12px;padding:8px 12px;border:1px dashed var(--border);border-radius:6px}
+.legend span b{color:var(--text)}
+.tw{border:1px solid var(--border);border-radius:8px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:1000px}
+th{background:var(--card);padding:9px 12px;text-align:left;font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--border);white-space:nowrap}
+td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:middle;font-size:12.5px}
+tbody tr{cursor:pointer}tbody tr:hover{background:var(--hover)}tbody tr:last-child td{border-bottom:none}
+tr.amber{background:rgba(210,153,34,.06)}tr.red{background:rgba(248,81,73,.05)}tr.blocked{opacity:.45}
+tr.sel{outline:1px solid var(--accent);outline-offset:-1px}
+.nm{font-weight:500;font-size:13px}.org{font-size:11px;color:var(--muted)}
+.dl{font-family:var(--mono);font-size:12px;white-space:nowrap}
+.muted{color:var(--muted)}.dim{color:var(--dim)}
+.b{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:500;white-space:nowrap}
+.b-y{background:var(--yellow-d);color:var(--yellow)}.b-a{background:var(--accent-d);color:var(--accent)}.b-r{background:var(--red-d);color:var(--red)}
+.b-g{background:var(--green-d);color:var(--green)}.b-x{background:var(--grey-d);color:var(--muted)}.b-p{background:var(--purple-d);color:var(--purple)}
+.code{font-family:var(--mono);font-size:11px;font-weight:700;padding:2px 6px;border-radius:4px;border:1px solid var(--border)}
+.fit{display:flex;gap:3px}.fit i{width:6px;height:6px;border-radius:50%;background:var(--border)}.fit i.f{background:var(--accent)}
+/* drawer */
+.dr{position:fixed;top:0;right:0;height:100vh;width:min(560px,100vw);background:var(--card);border-left:1px solid var(--border);transform:translateX(100%);transition:transform .18s;z-index:50;display:flex;flex-direction:column}
+.dr.on{transform:none}
+.dr-h{padding:16px 18px;border-bottom:1px solid var(--border);display:flex;gap:12px;justify-content:space-between;align-items:flex-start}
+.dr-h h2{font-size:15px}.x{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1}
+.dr-b{padding:16px 18px;overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:16px}
+.kv{display:grid;grid-template-columns:120px 1fr;gap:8px 12px;font-size:13px}.kv dt{color:var(--muted);font-size:12px}
+.sec h3{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:6px}
+.notes{white-space:pre-wrap;font-size:13px;line-height:1.6;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px}
+.elig-box{border-radius:6px;padding:10px 12px;font-size:13px}
+.links a{display:block;padding:6px 0;border-bottom:1px solid var(--border);font-size:13px;word-break:break-all}
+.resume-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+.rc{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px}.rc h3{font-size:13px}.rc p{font-size:11px;color:var(--muted);margin-bottom:10px}
+.ck{display:flex;gap:7px;font-size:12px;margin-bottom:6px}.ok{color:var(--green)}.wa{color:var(--yellow)}.ba{color:var(--red)}.ck span{color:var(--muted)}
+.err{display:none;background:var(--red-d);color:var(--red);padding:8px 12px;border-radius:6px;font-size:12px;margin-bottom:12px}
+@media(max-width:760px){.shell{flex-direction:column;height:auto}.side{width:100%}.nav{display:flex;flex-wrap:wrap}.main{overflow:visible}.stats{grid-template-columns:repeat(2,1fr)}.page{padding:16px}}
 </style>
 </head>
 <body>
 <div class="shell">
-
-  <nav class="sidebar">
-    <div class="sidebar-header">
-      <div class="name">Michael — Career</div>
-      <div class="label">Research &amp; Internship Tracker</div>
-    </div>
-    <div class="nav">
-      <div class="nav-item active" onclick="showPage('fellowships')" id="nav-fellowships">
-        <span>🏛</span> Fellowships
-        <span class="nav-count" id="cnt-fellowships">—</span>
-      </div>
-      <div class="nav-item" onclick="showPage('grad')" id="nav-grad">
-        <span>🎓</span> Grad Programs
-        <span class="nav-count" id="cnt-grad">—</span>
-      </div>
-      <div class="nav-item" onclick="showPage('jobs')" id="nav-jobs">
-        <span>💼</span> Jobs
-        <span class="nav-count" id="cnt-jobs">—</span>
-      </div>
-      <div class="nav-item" onclick="showPage('resume')" id="nav-resume">
-        <span>📄</span> Resumes
-      </div>
-    </div>
-    <div class="sidebar-footer">
-      <div class="meta" id="data-source">Loading data...</div>
-    </div>
-  </nav>
-
-  <main class="main">
-
-    <!-- Fellowships -->
-    <div class="page active" id="page-fellowships">
-      <div class="page-header">
-        <div>
-          <div class="page-title">Fellowships &amp; Internships</div>
-          <div class="page-subtitle">AI safety, research, and generalist programs</div>
-        </div>
-        <button class="btn btn-primary" onclick="openAdd('fellowships')">+ Add</button>
-      </div>
-      <div class="error-banner" id="err-fellowships"></div>
-      <div class="stats-strip" id="stats-fellowships"></div>
-      <div class="filters">
-        <button class="filter-btn active" onclick="setFilter('fellowships','all',this)">All</button>
-        <button class="filter-btn" onclick="setFilter('fellowships','Track',this)">Track</button>
-        <button class="filter-btn" onclick="setFilter('fellowships','Applied',this)">Applied</button>
-        <button class="filter-btn" onclick="setFilter('fellowships','Next Round',this)">Next Round</button>
-        <button class="filter-btn" onclick="setFilter('fellowships','Rejected',this)">Rejected</button>
-        <button class="filter-btn" onclick="setFilter('fellowships','Closed',this)">Closed</button>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Program</th><th>Deadline</th><th>Status</th><th>Fit</th><th>Notes</th><th></th></tr></thead>
-          <tbody id="tbody-fellowships"><tr class="empty-row"><td colspan="6">Loading...</td></tr></tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Grad -->
-    <div class="page" id="page-grad">
-      <div class="page-header">
-        <div>
-          <div class="page-title">Grad Programs</div>
-          <div class="page-subtitle">Funded MS, MTech, and PhD options</div>
-        </div>
-        <button class="btn btn-primary" onclick="openAdd('grad')">+ Add</button>
-      </div>
-      <div class="error-banner" id="err-grad"></div>
-      <div class="stats-strip" id="stats-grad"></div>
-      <div class="filters">
-        <button class="filter-btn active" onclick="setFilter('grad','all',this)">All</button>
-        <button class="filter-btn" onclick="setFilter('grad','Track',this)">Track</button>
-        <button class="filter-btn" onclick="setFilter('grad','Applied',this)">Applied</button>
-        <button class="filter-btn" onclick="setFilter('grad','Next Round',this)">Next Round</button>
-        <button class="filter-btn" onclick="setFilter('grad','Rejected',this)">Rejected</button>
-        <button class="filter-btn" onclick="setFilter('grad','Closed',this)">Closed</button>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Program</th><th>Deadline</th><th>Status</th><th>Fit</th><th>Notes</th><th></th></tr></thead>
-          <tbody id="tbody-grad"><tr class="empty-row"><td colspan="6">Loading...</td></tr></tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Jobs -->
-    <div class="page" id="page-jobs">
-      <div class="page-header">
-        <div>
-          <div class="page-title">Jobs</div>
-          <div class="page-subtitle">Active applications and pipeline</div>
-        </div>
-        <button class="btn btn-primary" onclick="openAdd('jobs')">+ Add</button>
-      </div>
-      <div class="error-banner" id="err-jobs"></div>
-      <div class="stats-strip" id="stats-jobs"></div>
-      <div class="filters">
-        <button class="filter-btn active" onclick="setFilter('jobs','all',this)">All</button>
-        <button class="filter-btn" onclick="setFilter('jobs','Track',this)">Track</button>
-        <button class="filter-btn" onclick="setFilter('jobs','Applied',this)">Applied</button>
-        <button class="filter-btn" onclick="setFilter('jobs','Shortlisted',this)">Shortlisted</button>
-        <button class="filter-btn" onclick="setFilter('jobs','Rejected',this)">Rejected</button>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Role</th><th>Company</th><th>Status</th><th>Fit</th><th>Notes</th><th></th></tr></thead>
-          <tbody id="tbody-jobs"><tr class="empty-row"><td colspan="6">Loading...</td></tr></tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Resume -->
-    <div class="page" id="page-resume">
-      <div class="page-header">
-        <div>
-          <div class="page-title">Resumes</div>
-          <div class="page-subtitle">Variants, sync status, and outstanding work</div>
-        </div>
-      </div>
-      <div class="resume-grid">
-        <div class="rcard">
-          <div class="rcard-title">General / Balanced</div>
-          <div class="rcard-target">Target: Senior IC, CTO, backend / AI infra</div>
-          <div class="check-list">
-            <div class="check-item check-ok"><i class="check-icon">✓</i><span class="check-text">Pre-LLM narrative clearly separated (Rasa 2014)</span></div>
-            <div class="check-item check-ok"><i class="check-icon">✓</i><span class="check-text">No em-dashes, no boilerplate opener phrases</span></div>
-            <div class="check-item check-ok"><i class="check-icon">✓</i><span class="check-text">IIT Madras BS listed with coursework</span></div>
-            <div class="check-item check-warn"><i class="check-icon">⚠</i><span class="check-text">GitHub repo links not yet added — repos not live</span></div>
-            <div class="check-item check-warn"><i class="check-icon">⚠</i><span class="check-text">Skills section still has competency descriptors to strip</span></div>
-            <div class="check-item check-bad"><i class="check-icon">✗</i><span class="check-text">CGPA discrepancy: 7.8 in file vs 7.5 discussed — reconcile before any grad application</span></div>
-          </div>
-        </div>
-        <div class="rcard">
-          <div class="rcard-title">AI / ML Research</div>
-          <div class="rcard-target">Target: AI safety orgs, research fellowships, MBZUAI</div>
-          <div class="check-list">
-            <div class="check-item check-ok"><i class="check-icon">✓</i><span class="check-text">Education section moved to top</span></div>
-            <div class="check-item check-ok"><i class="check-icon">✓</i><span class="check-text">Agentic evaluation and model-probe work featured</span></div>
-            <div class="check-item check-warn"><i class="check-icon">⚠</i><span class="check-text">CUDA — confirm framed as coursework only, not production skill</span></div>
-            <div class="check-item check-bad"><i class="check-icon">✗</i><span class="check-text">No Alignment Forum writeup or public research output yet — visible gap for fellowships</span></div>
-            <div class="check-item check-bad"><i class="check-icon">✗</i><span class="check-text">GitHub repo links not added — portfolio repos not yet live</span></div>
-          </div>
-        </div>
-        <div class="rcard">
-          <div class="rcard-title">JS / TS / Node / React</div>
-          <div class="rcard-target">Target: Buffer, Automattic, Node-heavy remote roles</div>
-          <div class="check-list">
-            <div class="check-item check-bad"><i class="check-icon">✗</i><span class="check-text">Not yet built — to be done from scratch</span></div>
-            <div class="check-item check-bad"><i class="check-icon">✗</i><span class="check-text">TypeScript / GraphQL gap vs Buffer JD — prep plan done, decision pending</span></div>
-          </div>
-        </div>
-        <div class="rcard">
-          <div class="rcard-title">PHP / WordPress</div>
-          <div class="rcard-target">Target: Automattic, WordPress ecosystem roles</div>
-          <div class="check-list">
-            <div class="check-item check-bad"><i class="check-icon">✗</i><span class="check-text">Not yet built — to be done from scratch</span></div>
-          </div>
-        </div>
-      </div>
-      <div style="border-top: 1px solid var(--border); padding-top: 20px;">
-        <div style="font-size:13px; font-weight:600; margin-bottom:12px;">Outstanding across all variants</div>
-        <div class="check-list">
-          <div class="check-item check-bad"><i class="check-icon">✗</i><span class="check-text">Reconcile CGPA (7.5 or 7.8?) and BS completion date (Aug or Dec 2026?) — blocks all grad applications</span></div>
-          <div class="check-item check-warn"><i class="check-icon">⚠</i><span class="check-text">GitHub portfolio: vectra PRD done, ~9 more priority PRDs needed, no repos live yet</span></div>
-          <div class="check-item check-warn"><i class="check-icon">⚠</i><span class="check-text">Developer portfolio site (almichael.dev) — not started</span></div>
-          <div class="check-item check-warn"><i class="check-icon">⚠</i><span class="check-text">LinkedIn profile updated — check consistency against latest resume variants</span></div>
-        </div>
-      </div>
-    </div>
-
-  </main>
-</div>
-
-<!-- Modal -->
-<div class="overlay" id="overlay" onclick="overlayClick(event)">
-  <div class="modal">
-    <div class="modal-head">
-      <h2 id="modal-title">Add Entry</h2>
-      <button class="modal-close" onclick="closeModal()">×</button>
-    </div>
-    <div class="modal-body">
-      <input type="hidden" id="m-section">
-      <input type="hidden" id="m-id">
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Name *</label>
-          <input class="form-input" id="m-name" placeholder="Program or role name">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Organization</label>
-          <input class="form-input" id="m-org" placeholder="Org name">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Deadline</label>
-          <input class="form-input" id="m-deadline" type="date">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Status</label>
-          <select class="form-select" id="m-status">
-            <option value="Track">Track</option>
-            <option value="Applied">Applied</option>
-            <option value="Next Round">Next Round</option>
-            <option value="Shortlisted">Shortlisted</option>
-            <option value="Rejected">Rejected</option>
-            <option value="Closed">Closed</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Fit (1–5)</label>
-          <select class="form-select" id="m-fit">
-            <option value="5">5 — Strong fit</option>
-            <option value="4">4 — Good fit</option>
-            <option value="3" selected>3 — Possible</option>
-            <option value="2">2 — Stretch</option>
-            <option value="1">1 — Long shot</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Link</label>
-          <input class="form-input" id="m-link" type="url" placeholder="https://...">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Notes</label>
-        <textarea class="form-textarea" id="m-notes" placeholder="Key requirements, action items, blockers..."></textarea>
-      </div>
-    </div>
-    <div class="modal-foot">
-      <button class="btn" onclick="closeModal()">Cancel</button>
-      <button class="btn btn-primary" onclick="saveModal()">Save</button>
-    </div>
+ <nav class="side">
+  <div class="side-h"><b>Michael — Career</b><div>Research &amp; Internship Tracker</div></div>
+  <div class="nav">
+   <div class="nav-i on" data-p="fellowships">🏛 Fellowships <span class="cnt" id="c-fellowships">—</span></div>
+   <div class="nav-i" data-p="grad">🎓 Grad Programs <span class="cnt" id="c-grad">—</span></div>
+   <div class="nav-i" data-p="jobs">💼 Jobs <span class="cnt" id="c-jobs">—</span></div>
+   <div class="nav-i" data-p="resume">📄 Resumes</div>
   </div>
+  <div class="side-f" id="src">Loading…</div>
+ </nav>
+ <main class="main" id="main"></main>
 </div>
+<aside class="dr" id="dr"><div class="dr-h"><div id="dr-t"></div><button class="x" onclick="closeDr()">×</button></div><div class="dr-b" id="dr-b"></div></aside>
 
 <script>
-const BASE = 'https://raw.githubusercontent.com/michaeldatascience/career/main/data/';
-const SECTIONS = ['fellowships', 'grad', 'jobs'];
-const TODAY = new Date(); TODAY.setHours(0,0,0,0);
+const REPO='michaeldatascience/career';
+const RAW=`https://raw.githubusercontent.com/${REPO}/main/data/`;
+const TODAY=new Date();TODAY.setHours(0,0,0,0);
+const FUND={FF:'Fully funded (tuition + stipend)',TW:'Tuition-free, living self-funded',TA:'Assistantship stipend',LT:'Low tuition',SC:'Scholarship/partial, not guaranteed',SP:'Self-paid'};
+const ELIG={OK:['Eligible','b-g'],RISK:['Check','b-y'],BLOCKED:['Blocked','b-r']};
+const STATUS={Track:'b-y',Applied:'b-a','Next Round':'b-g',Shortlisted:'b-p',Rejected:'b-r',Closed:'b-x'};
+const SECT={
+ fellowships:{title:'Fellowships & Internships',sub:'AI safety, research and generalist programmes',cols:['name','location','deadline','fees','funding','elig','status','fit'],feesLabel:'Stipend / Cost',statuses:['Track','Applied','Next Round','Rejected','Closed']},
+ grad:{title:'Grad Programs',sub:'Funded or tuition-free MS / MTech / PhD in AI, ML, DS',cols:['name','location','deadline','fees','funding','elig','status','fit'],feesLabel:'Fees',statuses:['Track','Applied','Next Round','Rejected','Closed']},
+ jobs:{title:'Jobs',sub:'Active applications and pipeline',cols:['name','location','status','fit'],feesLabel:'',statuses:['Track','Applied','Shortlisted','Rejected']}
+};
+let data={},filt={fellowships:'all',grad:'all',jobs:'all'},hideBlocked={fellowships:false,grad:false,jobs:false},cur='fellowships',selId=null;
 
-let data = { fellowships: [], grad: [], jobs: [] };
-let filters = { fellowships: 'all', grad: 'all', jobs: 'all' };
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function urg(d){if(!d)return'none';const x=new Date(d);if(isNaN(x))return'none';x.setHours(0,0,0,0);const n=Math.round((x-TODAY)/864e5);return n<0?'past':n<=7?'crit':n<=30?'soon':'open'}
+function days(d){const x=new Date(d);x.setHours(0,0,0,0);return Math.round((x-TODAY)/864e5)}
+function fmtD(d){if(!d)return'<span class="dim">—</span>';const x=new Date(d);if(isNaN(x))return esc(d);const l=x.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});const u=urg(d);
+ if(u==='past')return`<span class="dim">${l} (passed)</span>`;if(u==='crit')return`<span style="color:var(--red)">${l} · ${days(d)}d</span>`;if(u==='soon')return`<span style="color:var(--yellow)">${l} · ${days(d)}d</span>`;return l}
+const fitH=f=>{f=+f||0;let h='<div class="fit">';for(let i=1;i<=5;i++)h+=`<i class="${i<=f?'f':''}"></i>`;return h+'</div>'};
+const stat=s=>`<span class="b ${STATUS[s]||'b-y'}">${esc(s)}</span>`;
+const elig=e=>e?`<span class="b ${ELIG[e]?.[1]||'b-x'}">${ELIG[e]?.[0]||esc(e)}</span>`:'<span class="dim">—</span>';
+const fund=f=>f?`<span class="code" title="${esc(FUND[f]||f)}">${esc(f)}</span>`:'<span class="dim">—</span>';
 
-// ── Load ──────────────────────────────────────────────────────────────────
-async function loadAll() {
-  let loadedAny = false;
-  for (const s of SECTIONS) {
-    try {
-      const r = await fetch(BASE + s + '.json?t=' + Date.now());
-      if (!r.ok) throw new Error(r.status);
-      data[s] = await r.json();
-      loadedAny = true;
-    } catch(e) {
-      showError(s, 'Could not load data from GitHub. ' + e.message);
-    }
-  }
-  const src = document.getElementById('data-source');
-  if (loadedAny) {
-    src.innerHTML = `Data from GitHub<br><a href="https://github.com/michaeldatascience/career" target="_blank">michaeldatascience/career</a><br><span>Loaded ${new Date().toLocaleTimeString()}</span>`;
-  }
-  renderAll();
+function cell(c,it,s){
+ switch(c){
+  case'name':return`<td><div class="nm">${esc(it.name)}</div><div class="org">${esc(it.org)}</div></td>`;
+  case'location':return`<td class="muted">${esc(it.location||'—')}</td>`;
+  case'deadline':return`<td class="dl">${fmtD(it.deadline)}</td>`;
+  case'fees':return`<td>${esc(it.fees||'—')}${it.stipend?`<div class="org">${esc(it.stipend)}</div>`:''}</td>`;
+  case'funding':return`<td>${fund(it.funding)}</td>`;
+  case'elig':return`<td>${elig(it.elig)}</td>`;
+  case'status':return`<td>${stat(it.status)}</td>`;
+  case'fit':return`<td>${fitH(it.fit)}</td>`;
+ }}
+const HEAD={name:'Program',location:'Location',deadline:'Deadline',fees:'',funding:'Funding',elig:'Eligibility',status:'Status',fit:'Fit'};
+
+function pageShell(s){
+ const c=SECT[s];
+ const leg=s==='jobs'?'':`<div class="legend">${Object.entries(FUND).map(([k,v])=>`<span><b class="code">${k}</b> ${v}</span>`).join('')}<span><span class="b b-g">Eligible</span> <span class="b b-y">Check</span> <span class="b b-r">Blocked</span></span></div>`;
+ return`<div class="page" id="p-${s}"><div class="ph"><div><h1>${c.title}</h1><p>${c.sub} · click a row for full details</p></div>
+ <a href="https://github.com/${REPO}/blob/main/data/${s}.json" target="_blank" style="font-size:12px">View data file ↗</a></div>
+ <div class="err" id="e-${s}"></div><div class="stats" id="s-${s}"></div>
+ <div class="bar"><button class="fb on" data-f="all">All</button>${c.statuses.map(x=>`<button class="fb" data-f="${x}">${x}</button>`).join('')}
+ ${s==='jobs'?'':`<label class="tog"><input type="checkbox" data-hb="${s}"> Hide blocked</label>`}</div>${leg}
+ <div class="tw"><table><thead><tr>${c.cols.map(k=>`<th>${k==='fees'?c.feesLabel:HEAD[k]}</th>`).join('')}</tr></thead><tbody id="t-${s}"></tbody></table></div></div>`}
+
+function resumePage(){return`<div class="page" id="p-resume"><div class="ph"><div><h1>Resumes</h1><p>Variants, sync status, outstanding work (static — pending resume audit)</p></div></div>
+<div class="resume-grid">
+<div class="rc"><h3>General / Balanced</h3><p>Senior IC, CTO, backend / AI infra</p><div class="ck ok">✓<span>Pre-LLM narrative separated</span></div><div class="ck wa">⚠<span>GitHub links missing</span></div><div class="ck ba">✗<span>CGPA 7.8 in file vs 7.5 — reconcile</span></div></div>
+<div class="rc"><h3>AI / ML Research</h3><p>Fellowships, MBZUAI, research roles</p><div class="ck ok">✓<span>Education first</span></div><div class="ck ba">✗<span>No public research output yet</span></div><div class="ck ba">✗<span>Portfolio repos not live</span></div></div>
+<div class="rc"><h3>JS / TS / Node</h3><p>Buffer, Automattic, Node roles</p><div class="ck ba">✗<span>Not built</span></div></div>
+<div class="rc"><h3>PHP / WordPress</h3><p>Automattic, WP ecosystem</p><div class="ck ba">✗<span>Not built</span></div></div>
+</div></div>`}
+
+function render(s){
+ const items=(data[s]||[]).filter(i=>(filt[s]==='all'||i.status===filt[s])&&!(hideBlocked[s]&&i.elig==='BLOCKED'));
+ const cols=SECT[s].cols;
+ document.getElementById('t-'+s).innerHTML=items.length?items.map(it=>{const u=urg(it.deadline);
+  const cls=[it.elig==='BLOCKED'?'blocked':'',u==='crit'?'red':u==='soon'?'amber':'',selId===it.id?'sel':''].join(' ');
+  return`<tr class="${cls}" data-s="${s}" data-id="${esc(it.id)}">${cols.map(c=>cell(c,it,s)).join('')}</tr>`}).join('')
+  :`<tr><td colspan="${cols.length}" class="muted" style="text-align:center;padding:36px">No entries.</td></tr>`;
+ const all=data[s]||[];
+ const n=(f)=>all.filter(f).length;
+ document.getElementById('s-'+s).innerHTML=[
+  [all.length,'Total'],[n(i=>i.elig!=='BLOCKED'&&['Track','Next Round'].includes(i.status)),'Tracking (viable)'],
+  [n(i=>['Applied','Shortlisted'].includes(i.status)),'Applied'],[n(i=>i.elig==='BLOCKED'),'Blocked'],
+  [n(i=>i.elig!=='BLOCKED'&&['soon','crit'].includes(urg(i.deadline))),'Deadline ≤30d']
+ ].map(([v,l],k)=>`<div class="stat"><b style="${k===4&&v?'color:var(--yellow)':k===3&&v?'color:var(--red)':''}">${v}</b><span>${l}</span></div>`).join('');
+ document.getElementById('c-'+s).textContent=n(i=>i.elig!=='BLOCKED'&&!['Rejected','Closed'].includes(i.status));
 }
 
-function showError(section, msg) {
-  const el = document.getElementById('err-' + section);
-  if (el) { el.textContent = msg; el.style.display = 'block'; }
+function openDr(s,id){
+ const it=(data[s]||[]).find(x=>x.id===id);if(!it)return;selId=id;render(s);
+ document.getElementById('dr-t').innerHTML=`<h2>${esc(it.name)}</h2><div class="org">${esc(it.org)}</div>`;
+ const e=it.elig,ec=e==='BLOCKED'?'var(--red-d)':e==='RISK'?'var(--yellow-d)':'var(--green-d)';
+ const links=(it.links&&it.links.length?it.links:(it.link?[{label:'Official page',url:it.link}]:[]));
+ document.getElementById('dr-b').innerHTML=`
+ <dl class="kv"><dt>Status</dt><dd>${stat(it.status)}</dd><dt>Deadline</dt><dd class="dl">${fmtD(it.deadline)}</dd>
+ ${it.location?`<dt>Location</dt><dd>${esc(it.location)}</dd>`:''}
+ ${it.fees?`<dt>${s==='fellowships'?'Stipend / Cost':'Fees'}</dt><dd>${esc(it.fees)}</dd>`:''}
+ ${it.stipend?`<dt>Stipend</dt><dd>${esc(it.stipend)}</dd>`:''}
+ ${it.funding?`<dt>Funding</dt><dd>${fund(it.funding)} ${esc(FUND[it.funding]||'')}</dd>`:''}
+ <dt>Fit</dt><dd>${fitH(it.fit)}</dd></dl>
+ ${e?`<div class="sec"><h3>Eligibility</h3><div class="elig-box" style="background:${ec}">${elig(e)} ${esc(it.elig_note||'')}</div></div>`:''}
+ <div class="sec"><h3>Notes</h3><div class="notes">${esc(it.notes||'—')}</div></div>
+ <div class="sec links"><h3>Links</h3>${links.length?links.map(l=>`<a href="${esc(l.url)}" target="_blank">${esc(l.label)} ↗</a>`).join(''):'<span class="dim">None yet</span>'}</div>`;
+ document.getElementById('dr').classList.add('on');
 }
+function closeDr(){document.getElementById('dr').classList.remove('on');selId=null;render(cur==='resume'?'fellowships':cur)}
 
-// ── Render ────────────────────────────────────────────────────────────────
-function renderAll() {
-  SECTIONS.forEach(renderSection);
-  updateCounts();
+function show(p){cur=p;document.querySelectorAll('.page').forEach(x=>x.classList.toggle('on',x.id==='p-'+p));document.querySelectorAll('.nav-i').forEach(x=>x.classList.toggle('on',x.dataset.p===p));closeDr()}
+
+async function init(){
+ const m=document.getElementById('main');m.innerHTML=Object.keys(SECT).map(pageShell).join('')+resumePage();
+ document.getElementById('p-fellowships').classList.add('on');
+ document.querySelectorAll('.nav-i').forEach(n=>n.onclick=()=>show(n.dataset.p));
+ m.addEventListener('click',e=>{
+  const fb=e.target.closest('.fb');if(fb){const s=fb.closest('.page').id.slice(2);filt[s]=fb.dataset.f;fb.parentNode.querySelectorAll('.fb').forEach(b=>b.classList.toggle('on',b===fb));render(s);return}
+  const tr=e.target.closest('tr[data-id]');if(tr)openDr(tr.dataset.s,tr.dataset.id)});
+ m.addEventListener('change',e=>{const s=e.target.dataset.hb;if(s){hideBlocked[s]=e.target.checked;render(s)}});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDr()});
+ for(const s of Object.keys(SECT)){try{const r=await fetch(RAW+s+'.json?t='+Date.now());if(!r.ok)throw Error(r.status);data[s]=await r.json()}catch(err){data[s]=[];const el=document.getElementById('e-'+s);el.textContent='Could not load '+s+'.json ('+err.message+')';el.style.display='block'}render(s)}
+ document.getElementById('src').innerHTML=`Data: <a href="https://github.com/${REPO}" target="_blank">${REPO}</a><br>Loaded ${new Date().toLocaleTimeString()}`;
 }
-
-function renderSection(s) {
-  const filter = filters[s];
-  const items = filter === 'all' ? data[s] : data[s].filter(i => i.status === filter);
-  const tbody = document.getElementById('tbody-' + s);
-  const isJobs = s === 'jobs';
-
-  if (!items.length) {
-    tbody.innerHTML = '<tr class="empty-row"><td colspan="6">No entries match this filter.</td></tr>';
-  } else {
-    tbody.innerHTML = items.map(item => rowHtml(item, s, isJobs)).join('');
-  }
-  renderStats(s);
-}
-
-function rowHtml(item, s, isJobs) {
-  const urg = urgency(item.deadline);
-  const rowCls = urg === 'critical' ? 'row-red' : urg === 'soon' ? 'row-amber' : '';
-  const nameCell = item.link
-    ? `<a href="${esc(item.link)}" target="_blank" onclick="event.stopPropagation()">${esc(item.name)}</a>`
-    : esc(item.name);
-  const col2 = isJobs
-    ? `<td><div class="td-name">${esc(item.org||'')}</div></td>`
-    : `<td><span class="td-deadline deadline-${urg}">${fmtDeadline(item.deadline, urg)}</span></td>`;
-
-  return `<tr class="${rowCls}" onclick="openEdit('${s}','${esc(item.id)}')">
-    <td>
-      <div class="td-name">${nameCell}</div>
-      ${!isJobs && item.org ? `<div class="td-org">${esc(item.org)}</div>` : ''}
-      ${isJobs ? '' : ''}
-    </td>
-    ${col2}
-    <td>${badge(item.status)}</td>
-    <td>${fitDots(item.fit)}</td>
-    <td><div class="note-cell">${esc(item.notes||'')}</div></td>
-    <td><button class="del-btn" onclick="event.stopPropagation();delItem('${s}','${esc(item.id)}')">✕</button></td>
-  </tr>`;
-}
-
-function renderStats(s) {
-  const items = data[s];
-  const total = items.length;
-  const applied = items.filter(i => i.status === 'Applied' || i.status === 'Shortlisted').length;
-  const tracking = items.filter(i => i.status === 'Track' || i.status === 'Next Round').length;
-  const urgent = items.filter(i => { const u = urgency(i.deadline); return u === 'soon' || u === 'critical'; }).length;
-  const urgColor = urgent > 0 ? 'var(--yellow)' : 'var(--text)';
-  document.getElementById('stats-' + s).innerHTML = `
-    <div class="stat-card"><div class="stat-value">${total}</div><div class="stat-label">Total</div></div>
-    <div class="stat-card"><div class="stat-value">${applied}</div><div class="stat-label">Applied</div></div>
-    <div class="stat-card"><div class="stat-value">${tracking}</div><div class="stat-label">Tracking</div></div>
-    <div class="stat-card"><div class="stat-value" style="color:${urgColor}">${urgent}</div><div class="stat-label">Deadline ≤30d</div></div>`;
-}
-
-function updateCounts() {
-  SECTIONS.forEach(s => {
-    const n = data[s].filter(i => ['Track','Applied','Next Round','Shortlisted'].includes(i.status)).length;
-    document.getElementById('cnt-' + s).textContent = n;
-  });
-}
-
-// ── Helpers ───────────────────────────────────────────────────────────────
-function urgency(dl) {
-  if (!dl) return 'none';
-  const d = new Date(dl); d.setHours(0,0,0,0);
-  if (isNaN(d)) return 'none';
-  const diff = Math.round((d - TODAY) / 86400000);
-  if (diff < 0) return 'past';
-  if (diff <= 7) return 'critical';
-  if (diff <= 30) return 'soon';
-  return 'open';
-}
-
-function fmtDeadline(dl, urg) {
-  if (!dl) return '—';
-  const d = new Date(dl);
-  if (isNaN(d)) return dl;
-  const label = d.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
-  const diff = Math.round((d - TODAY) / 86400000);
-  if (urg === 'past') return `${label} <span style="font-size:10px;color:var(--text-dim)">(passed)</span>`;
-  if (urg === 'critical') return `${label} <span style="font-size:10px;color:var(--red)">${diff}d</span>`;
-  if (urg === 'soon') return `${label} <span style="font-size:10px;color:var(--yellow)">${diff}d</span>`;
-  return label;
-}
-
-function badge(status) {
-  const map = { 'Track':'track','Applied':'applied','Rejected':'rejected','Closed':'closed','Next Round':'next-round','Shortlisted':'shortlisted' };
-  const cls = map[status] || 'track';
-  return `<span class="badge badge-${cls}">${esc(status)}</span>`;
-}
-
-function fitDots(fit) {
-  fit = parseInt(fit) || 3;
-  let h = '<div class="fit">';
-  for (let i=1;i<=5;i++) h += `<div class="fit-dot ${i<=fit?'fit-filled':'fit-empty'}"></div>`;
-  return h + '</div>';
-}
-
-function esc(s) {
-  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-// ── Navigation ────────────────────────────────────────────────────────────
-function showPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  document.getElementById('page-' + id).classList.add('active');
-  document.getElementById('nav-' + id).classList.add('active');
-}
-
-function setFilter(s, val, btn) {
-  filters[s] = val;
-  btn.closest('.filters').querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  renderSection(s);
-}
-
-// ── Modal ─────────────────────────────────────────────────────────────────
-function openAdd(s) {
-  document.getElementById('m-section').value = s;
-  document.getElementById('m-id').value = '';
-  document.getElementById('modal-title').textContent = 'Add entry';
-  ['m-name','m-org','m-link','m-notes'].forEach(id => document.getElementById(id).value = '');
-  document.getElementById('m-deadline').value = '';
-  document.getElementById('m-status').value = 'Track';
-  document.getElementById('m-fit').value = '3';
-  document.getElementById('overlay').classList.add('open');
-}
-
-function openEdit(s, id) {
-  const item = data[s].find(i => i.id === id);
-  if (!item) return;
-  document.getElementById('m-section').value = s;
-  document.getElementById('m-id').value = id;
-  document.getElementById('modal-title').textContent = 'Edit entry';
-  document.getElementById('m-name').value = item.name || '';
-  document.getElementById('m-org').value = item.org || '';
-  document.getElementById('m-deadline').value = item.deadline || '';
-  document.getElementById('m-status').value = item.status || 'Track';
-  document.getElementById('m-fit').value = item.fit || 3;
-  document.getElementById('m-link').value = item.link || '';
-  document.getElementById('m-notes').value = item.notes || '';
-  document.getElementById('overlay').classList.add('open');
-}
-
-function closeModal() { document.getElementById('overlay').classList.remove('open'); }
-function overlayClick(e) { if (e.target === document.getElementById('overlay')) closeModal(); }
-
-function saveModal() {
-  const s = document.getElementById('m-section').value;
-  const id = document.getElementById('m-id').value;
-  const name = document.getElementById('m-name').value.trim();
-  if (!name) { alert('Name is required.'); return; }
-  const entry = {
-    id: id || s[0] + Date.now().toString(36),
-    name,
-    org: document.getElementById('m-org').value.trim(),
-    deadline: document.getElementById('m-deadline').value,
-    status: document.getElementById('m-status').value,
-    fit: parseInt(document.getElementById('m-fit').value),
-    link: document.getElementById('m-link').value.trim(),
-    notes: document.getElementById('m-notes').value.trim(),
-  };
-  if (id) {
-    const idx = data[s].findIndex(i => i.id === id);
-    if (idx > -1) data[s][idx] = entry;
-  } else {
-    data[s].push(entry);
-  }
-  closeModal();
-  renderSection(s);
-  updateCounts();
-  showSaveNote(s);
-}
-
-function delItem(s, id) {
-  if (!confirm('Delete this entry?')) return;
-  data[s] = data[s].filter(i => i.id !== id);
-  renderSection(s);
-  updateCounts();
-  showSaveNote(s);
-}
-
-function showSaveNote(s) {
-  showError(s, '⚠ Local change — not saved to GitHub. Tell Claude to update the data file to make it permanent.');
-}
-
-// ── Boot ──────────────────────────────────────────────────────────────────
-loadAll();
+init();
 </script>
 </body>
 </html>
